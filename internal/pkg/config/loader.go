@@ -204,7 +204,7 @@ func validate(cfg *Config) error {
 	// Create directories if they don't exist
 	dirs := []string{cfg.Print.OutputDirectory, cfg.Print.TempDirectory}
 	for _, dir := range dirs {
-		if err := os.MkdirAll(dir, 0755); err != nil {
+		if err := os.MkdirAll(dir, 0750); err != nil {
 			return fmt.Errorf("failed to create directory %s: %w", dir, err)
 		}
 	}
@@ -230,13 +230,17 @@ func validate(cfg *Config) error {
 // Helper functions for parsing environment variables
 func parseInt(s string) int {
 	var result int
-	fmt.Sscanf(s, "%d", &result)
+	if _, err := fmt.Sscanf(s, "%d", &result); err != nil {
+		return 0
+	}
 	return result
 }
 
 func parseInt64(s string) int64 {
 	var result int64
-	fmt.Sscanf(s, "%d", &result)
+	if _, err := fmt.Sscanf(s, "%d", &result); err != nil {
+		return 0
+	}
 	return result
 }
 

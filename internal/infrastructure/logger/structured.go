@@ -14,10 +14,10 @@ type StructuredLogger struct {
 }
 
 // NewStructuredLogger creates a new structured logger
-func NewStructuredLogger(cfg config.LoggerConfig) Logger {
+func NewStructuredLogger(cfg *config.LoggerConfig) Logger {
 	// Configure log level
 	level := ParseLogLevel(cfg.Level)
-	zapLevel := zapcore.Level(level)
+	zapLevel := zapcore.Level(int8(level))
 
 	// Configure encoder
 	var encoderConfig zapcore.EncoderConfig
@@ -43,7 +43,7 @@ func NewStructuredLogger(cfg config.LoggerConfig) Logger {
 		writeSyncer = zapcore.AddSync(os.Stderr)
 	case "file":
 		if cfg.File != "" {
-			file, err := os.OpenFile(cfg.File, os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
+			file, err := os.OpenFile(cfg.File, os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0600)
 			if err == nil {
 				writeSyncer = zapcore.AddSync(file)
 			} else {

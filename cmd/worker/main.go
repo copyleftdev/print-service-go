@@ -22,23 +22,23 @@ func main() {
 	}
 
 	// Initialize logger
-	logger := logger.NewStructuredLogger(cfg.Logger)
-	defer logger.Sync()
+	log := logger.NewStructuredLogger(&cfg.Logger)
+	defer log.Sync()
 
 	// Create worker pool
-	workerPool := pool.NewWorkerPool(cfg.Worker.PoolSize, logger)
+	workerPool := pool.NewWorkerPool(cfg.Worker.PoolSize, log)
 
 	// Initialize queue service
-	queueService, err := services.NewQueueService(cfg.Queue, logger)
+	queueService, err := services.NewQueueService(cfg.Queue, log)
 	if err != nil {
-		logger.Error("Failed to initialize queue service", "error", err)
+		log.Error("Failed to initialize queue service", "error", err)
 		os.Exit(1)
 	}
 
 	// Initialize print service
-	printService, err := services.NewPrintService(cfg.Print, logger)
+	printService, err := services.NewPrintService(cfg.Print, log)
 	if err != nil {
-		logger.Error("Failed to initialize print service", "error", err)
+		log.Error("Failed to initialize print service", "error", err)
 		os.Exit(1)
 	}
 
@@ -53,21 +53,21 @@ func main() {
 
 	// Start queue consumer
 	go func() {
-		logger.Info("Starting queue consumer")
+		log.Info("Starting queue consumer")
 		if err := queueService.StartConsumer(ctx, workerPool.Submit); err != nil {
-			logger.Error("Queue consumer failed", "error", err)
+			log.Error("Queue consumer failed", "error", err)
 			cancel()
 		}
 	}()
 
-	logger.Info("Worker started", "pool_size", cfg.Worker.PoolSize)
+	log.Info("Worker started", "pool_size", cfg.Worker.PoolSize)
 
 	// Wait for interrupt signal
 	quit := make(chan os.Signal, 1)
 	signal.Notify(quit, syscall.SIGINT, syscall.SIGTERM)
 	<-quit
 
-	logger.Info("Shutting down worker...")
+	log.Info("Shutting down worker...")
 
 	// Cancel context to stop all workers
 	cancel()
@@ -79,5 +79,5 @@ func main() {
 	workerPool.Stop(shutdownCtx)
 	queueService.Stop(shutdownCtx)
 
-	logger.Info("Worker exited")
+	log.Info("Worker exited")
 }
