@@ -22,10 +22,10 @@ func (te *TextEngine) Layout(node *domain.LayoutNode, ctx *LayoutContext) error 
 
 	// Calculate text metrics
 	metrics := te.calculateTextMetrics(node.Content, node.Style.Font, node.Box.Width)
-	
+
 	// Update node box height based on text
 	node.Box.Height = metrics.TotalHeight
-	
+
 	return nil
 }
 
@@ -47,7 +47,7 @@ func (te *TextEngine) calculateTextMetrics(text string, font domain.FontStyle, c
 
 	// Estimate character width based on font
 	avgCharWidth := te.estimateCharWidth(font)
-	
+
 	// Calculate how many characters fit per line
 	charsPerLine := int(containerWidth / avgCharWidth)
 	if charsPerLine <= 0 {
@@ -57,7 +57,7 @@ func (te *TextEngine) calculateTextMetrics(text string, font domain.FontStyle, c
 	// Split text into words and calculate line breaks
 	words := strings.Fields(text)
 	lines := te.wrapWords(words, charsPerLine, avgCharWidth, containerWidth)
-	
+
 	lineCount := len(lines)
 	if lineCount == 0 {
 		lineCount = 1
@@ -207,7 +207,7 @@ func (te *TextEngine) CalculateLineHeight(font domain.FontStyle, lineHeightStyle
 			return lineHeightStyle
 		}
 	}
-	
+
 	// Default line height
 	return font.Size * 1.2
 }

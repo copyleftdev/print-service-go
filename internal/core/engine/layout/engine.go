@@ -12,10 +12,10 @@ import (
 
 // Engine handles layout calculations for documents
 type Engine struct {
-	boxCalculator  *BoxCalculator
-	textEngine     *TextEngine
-	flowEngine     *FlowEngine
-	pageBreaker    *PageBreaker
+	boxCalculator *BoxCalculator
+	textEngine    *TextEngine
+	flowEngine    *FlowEngine
+	pageBreaker   *PageBreaker
 }
 
 // NewEngine creates a new layout engine
@@ -142,7 +142,7 @@ func (e *Engine) singleSelectorMatches(selector *css.Selector, domNode *html.DOM
 	}
 
 	lastComponent := selector.Components[len(selector.Components)-1]
-	
+
 	switch lastComponent.Type {
 	case css.SelectorTypeElement:
 		return domNode.Type == html.ElementNode && domNode.Data == lastComponent.Value
@@ -212,7 +212,7 @@ func (e *Engine) applyDeclaration(decl *css.Declaration, style *domain.ComputedS
 // applyInlineStyle applies inline CSS styles
 func (e *Engine) applyInlineStyle(inlineStyle string, style *domain.ComputedStyle) error {
 	parser := css.NewParser(false)
-	
+
 	// Parse as a single rule
 	ruleContent := fmt.Sprintf("dummy { %s }", inlineStyle)
 	stylesheet, err := parser.Parse(ruleContent)

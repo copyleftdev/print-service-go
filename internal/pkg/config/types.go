@@ -33,11 +33,11 @@ type TLSConfig struct {
 
 // WorkerConfig represents background worker configuration
 type WorkerConfig struct {
-	PoolSize    int           `yaml:"pool_size" json:"pool_size"`
-	QueueSize   int           `yaml:"queue_size" json:"queue_size"`
-	Timeout     time.Duration `yaml:"timeout" json:"timeout"`
-	RetryCount  int           `yaml:"retry_count" json:"retry_count"`
-	RetryDelay  time.Duration `yaml:"retry_delay" json:"retry_delay"`
+	PoolSize   int           `yaml:"pool_size" json:"pool_size"`
+	QueueSize  int           `yaml:"queue_size" json:"queue_size"`
+	Timeout    time.Duration `yaml:"timeout" json:"timeout"`
+	RetryCount int           `yaml:"retry_count" json:"retry_count"`
+	RetryDelay time.Duration `yaml:"retry_delay" json:"retry_delay"`
 }
 
 // PrintConfig represents print service configuration

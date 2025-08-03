@@ -40,7 +40,7 @@ func RateLimit() gin.HandlerFunc {
 
 		if !limiter.Allow(clientIP) {
 			c.JSON(http.StatusTooManyRequests, gin.H{
-				"error": "Rate limit exceeded",
+				"error":       "Rate limit exceeded",
 				"retry_after": limiter.window.Seconds(),
 			})
 			c.Abort()

@@ -63,7 +63,7 @@ func (fe *FlowEngine) calculateInlineFlow(node *domain.LayoutNode, ctx *LayoutCo
 	for _, child := range node.Children {
 		// Check if child fits on current line
 		availableWidth := node.Box.Width - (currentX - node.Box.X) - node.Style.Padding.Right
-		
+
 		if child.Box.Width <= availableWidth {
 			// Child fits on current line
 			child.Box.X = currentX
@@ -134,8 +134,8 @@ func (fe *FlowEngine) findContainingBlock(node *domain.LayoutNode) *domain.Layou
 	current := node.Parent
 	for current != nil {
 		if current.Style.Position == domain.PositionRelative ||
-		   current.Style.Position == domain.PositionAbsolute ||
-		   current.Style.Position == domain.PositionFixed {
+			current.Style.Position == domain.PositionAbsolute ||
+			current.Style.Position == domain.PositionFixed {
 			return current
 		}
 		current = current.Parent

@@ -85,29 +85,29 @@ const (
 
 // LayoutNode represents a node in the layout tree
 type LayoutNode struct {
-	ID       string       `json:"id"`
-	Type     string       `json:"type"`
-	Box      Box          `json:"box"`
+	ID       string        `json:"id"`
+	Type     string        `json:"type"`
+	Box      Box           `json:"box"`
 	Style    ComputedStyle `json:"style"`
 	Children []*LayoutNode `json:"children"`
 	Parent   *LayoutNode   `json:"-"`
-	Content  string       `json:"content,omitempty"`
+	Content  string        `json:"content,omitempty"`
 }
 
 // ComputedStyle represents computed CSS styles
 type ComputedStyle struct {
-	Display       Display       `json:"display"`
-	Position      Position      `json:"position"`
-	Width         string        `json:"width"`
-	Height        string        `json:"height"`
-	Margin        Margins       `json:"margin"`
-	Padding       Margins       `json:"padding"`
-	Border        BorderStyle   `json:"border"`
-	Background    Background    `json:"background"`
-	Font          FontStyle     `json:"font"`
-	Text          TextStyle     `json:"text"`
-	Color         Color         `json:"color"`
-	ZIndex        int           `json:"z_index"`
+	Display    Display     `json:"display"`
+	Position   Position    `json:"position"`
+	Width      string      `json:"width"`
+	Height     string      `json:"height"`
+	Margin     Margins     `json:"margin"`
+	Padding    Margins     `json:"padding"`
+	Border     BorderStyle `json:"border"`
+	Background Background  `json:"background"`
+	Font       FontStyle   `json:"font"`
+	Text       TextStyle   `json:"text"`
+	Color      Color       `json:"color"`
+	ZIndex     int         `json:"z_index"`
 }
 
 // BorderStyle represents border styling

@@ -40,11 +40,11 @@ type JobHandler func(job interface{}) error
 // NewWorkerPool creates a new worker pool
 func NewWorkerPool(size int, logger logger.Logger) *WorkerPool {
 	ctx, cancel := context.WithCancel(context.Background())
-	
+
 	return &WorkerPool{
 		size:    size,
 		jobs:    make(chan interface{}, size*2), // Buffer for jobs
-		results: make(chan Result, size*2),     // Buffer for results
+		results: make(chan Result, size*2),      // Buffer for results
 		workers: make([]*Worker, 0, size),
 		logger:  logger,
 		ctx:     ctx,
@@ -64,7 +64,7 @@ func (wp *WorkerPool) Start(ctx context.Context, handler JobHandler) {
 			logger: wp.logger.With("worker_id", i+1),
 		}
 		wp.workers = append(wp.workers, worker)
-		
+
 		wp.wg.Add(1)
 		go worker.start(ctx, handler)
 	}
@@ -89,17 +89,17 @@ func (wp *WorkerPool) Submit(job interface{}) error {
 // Stop stops the worker pool gracefully
 func (wp *WorkerPool) Stop(ctx context.Context) {
 	wp.logger.Info("Stopping worker pool")
-	
+
 	// Close job channel to signal workers to stop
 	close(wp.jobs)
-	
+
 	// Wait for workers to finish with timeout
 	done := make(chan struct{})
 	go func() {
 		wp.wg.Wait()
 		close(done)
 	}()
-	
+
 	select {
 	case <-done:
 		wp.logger.Info("All workers stopped gracefully")
@@ -108,7 +108,7 @@ func (wp *WorkerPool) Stop(ctx context.Context) {
 		wp.cancel()
 		wp.wg.Wait()
 	}
-	
+
 	// Close results channel
 	close(wp.results)
 }
@@ -126,10 +126,10 @@ func (wp *WorkerPool) GetStats() PoolStats {
 // start starts a worker
 func (w *Worker) start(ctx context.Context, handler JobHandler) {
 	defer w.pool.wg.Done()
-	
+
 	w.logger.Debug("Worker started")
 	defer w.logger.Debug("Worker stopped")
-	
+
 	for {
 		select {
 		case job, ok := <-w.pool.jobs:
@@ -137,27 +137,27 @@ func (w *Worker) start(ctx context.Context, handler JobHandler) {
 				// Job channel closed, worker should exit
 				return
 			}
-			
+
 			// Process the job
 			w.logger.Debug("Processing job", "job_type", getJobType(job))
 			start := time.Now()
-			
+
 			err := handler(job)
-			
+
 			duration := time.Since(start)
 			if err != nil {
 				w.logger.Error("Job failed", "error", err, "duration", duration)
 			} else {
 				w.logger.Debug("Job completed", "duration", duration)
 			}
-			
+
 			// Send result
 			select {
 			case w.pool.results <- Result{Job: job, Error: err}:
 			case <-ctx.Done():
 				return
 			}
-			
+
 		case <-ctx.Done():
 			w.logger.Debug("Worker context cancelled")
 			return
@@ -193,6 +193,6 @@ type PoolStats struct {
 
 // Custom errors
 var (
-	ErrQueueFull = fmt.Errorf("job queue is full")
+	ErrQueueFull   = fmt.Errorf("job queue is full")
 	ErrPoolStopped = fmt.Errorf("worker pool is stopped")
 )

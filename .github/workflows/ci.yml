@@ -9,7 +9,7 @@ on:
     types: [ published ]
 
 env:
-  GO_VERSION: '1.21'
+  GO_VERSION: '1.24'
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
 
@@ -73,10 +73,16 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    - name: Run Gosec Security Scanner
-      uses: securecodewarrior/github-action-gosec@master
+    - name: Set up Go
+      uses: actions/setup-go@v5
       with:
-        args: '-no-fail -fmt sarif -out gosec.sarif ./...'
+        go-version: ${{ env.GO_VERSION }}
+        cache: true
+
+    - name: Run Gosec Security Scanner
+      run: |
+        go install github.com/securego/gosec/v2/cmd/gosec@latest
+        gosec -no-fail -fmt sarif -out gosec.sarif ./...
 
     - name: Upload SARIF file
       uses: github/codeql-action/upload-sarif@v3
@@ -171,7 +177,7 @@ jobs:
           type=semver,pattern={{version}}
           type=semver,pattern={{major}}.{{minor}}
           type=semver,pattern={{major}}
-          type=sha,prefix={{branch}}-
+          type=sha
 
     - name: Extract metadata (worker)
       id: meta-worker
@@ -184,7 +190,7 @@ jobs:
           type=semver,pattern={{version}}
           type=semver,pattern={{major}}.{{minor}}
           type=semver,pattern={{major}}
-          type=sha,prefix={{branch}}-
+          type=sha
 
     - name: Build and push server image
       uses: docker/build-push-action@v6

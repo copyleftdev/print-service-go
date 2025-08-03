@@ -3,8 +3,9 @@ package middleware
 import (
 	"time"
 
-	"github.com/gin-gonic/gin"
 	"print-service/internal/infrastructure/logger"
+
+	"github.com/gin-gonic/gin"
 )
 
 // Logging returns a middleware that logs HTTP requests

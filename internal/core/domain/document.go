@@ -6,13 +6,13 @@ import (
 
 // Document represents a document to be printed
 type Document struct {
-	ID          string            `json:"id"`
-	Content     string            `json:"content"`
-	ContentType ContentType       `json:"content_type"`
-	Metadata    DocumentMetadata  `json:"metadata"`
-	Options     PrintOptions      `json:"options"`
-	CreatedAt   time.Time         `json:"created_at"`
-	UpdatedAt   time.Time         `json:"updated_at"`
+	ID          string           `json:"id"`
+	Content     string           `json:"content"`
+	ContentType ContentType      `json:"content_type"`
+	Metadata    DocumentMetadata `json:"metadata"`
+	Options     PrintOptions     `json:"options"`
+	CreatedAt   time.Time        `json:"created_at"`
+	UpdatedAt   time.Time        `json:"updated_at"`
 }
 
 // ContentType represents the type of document content
@@ -37,17 +37,17 @@ type DocumentMetadata struct {
 
 // PrintJob represents a print job in the system
 type PrintJob struct {
-	ID          string       `json:"id"`
-	Document    Document     `json:"document"`
-	Status      JobStatus    `json:"status"`
-	Progress    float64      `json:"progress"`
-	Error       string       `json:"error,omitempty"`
-	OutputPath  string       `json:"output_path,omitempty"`
-	CreatedAt   time.Time    `json:"created_at"`
-	StartedAt   *time.Time   `json:"started_at,omitempty"`
-	CompletedAt *time.Time   `json:"completed_at,omitempty"`
-	RetryCount  int          `json:"retry_count"`
-	Priority    JobPriority  `json:"priority"`
+	ID          string      `json:"id"`
+	Document    Document    `json:"document"`
+	Status      JobStatus   `json:"status"`
+	Progress    float64     `json:"progress"`
+	Error       string      `json:"error,omitempty"`
+	OutputPath  string      `json:"output_path,omitempty"`
+	CreatedAt   time.Time   `json:"created_at"`
+	StartedAt   *time.Time  `json:"started_at,omitempty"`
+	CompletedAt *time.Time  `json:"completed_at,omitempty"`
+	RetryCount  int         `json:"retry_count"`
+	Priority    JobPriority `json:"priority"`
 }
 
 // JobStatus represents the status of a print job
@@ -72,10 +72,10 @@ const (
 
 // RenderResult represents the result of a document rendering operation
 type RenderResult struct {
-	OutputPath   string        `json:"output_path"`
-	OutputSize   int64         `json:"output_size"`
-	PageCount    int           `json:"page_count"`
-	RenderTime   time.Duration `json:"render_time"`
-	CacheHit     bool          `json:"cache_hit"`
-	Warnings     []string      `json:"warnings,omitempty"`
+	OutputPath string        `json:"output_path"`
+	OutputSize int64         `json:"output_size"`
+	PageCount  int           `json:"page_count"`
+	RenderTime time.Duration `json:"render_time"`
+	CacheHit   bool          `json:"cache_hit"`
+	Warnings   []string      `json:"warnings,omitempty"`
 }

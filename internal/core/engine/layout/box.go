@@ -22,13 +22,13 @@ func (bc *BoxCalculator) Calculate(node *domain.LayoutNode, ctx *LayoutContext) 
 
 	// Calculate content box
 	contentBox := bc.calculateContentBox(node, ctx)
-	
+
 	// Calculate padding box
 	paddingBox := bc.calculatePaddingBox(contentBox, node.Style.Padding)
-	
+
 	// Calculate border box
 	borderBox := bc.calculateBorderBox(paddingBox, node.Style.Border)
-	
+
 	// Calculate margin box
 	marginBox := bc.calculateMarginBox(borderBox, node.Style.Margin)
 
@@ -119,16 +119,16 @@ func (bc *BoxCalculator) estimateLineCount(text string, width float64, font doma
 	// Simple estimation - assume average character width
 	avgCharWidth := font.Size * 0.6 // Rough approximation
 	charsPerLine := int(width / avgCharWidth)
-	
+
 	if charsPerLine <= 0 {
 		charsPerLine = 1
 	}
-	
+
 	lines := (len(text) + charsPerLine - 1) / charsPerLine
 	if lines == 0 {
 		lines = 1
 	}
-	
+
 	return lines
 }
 
@@ -156,7 +156,7 @@ func (bc *BoxCalculator) parseLength(value string, containerSize float64) float6
 	if len(value) > 2 {
 		unit := value[len(value)-2:]
 		numValue := parseFloat(value[:len(value)-2])
-		
+
 		switch unit {
 		case "em":
 			return numValue * 16 // Assume 16px base font size

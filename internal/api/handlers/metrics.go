@@ -4,8 +4,9 @@ import (
 	"net/http"
 	"runtime"
 
-	"github.com/gin-gonic/gin"
 	"print-service/internal/infrastructure/logger"
+
+	"github.com/gin-gonic/gin"
 )
 
 // MetricsHandler handles metrics requests
@@ -34,10 +35,10 @@ func (mh *MetricsHandler) Metrics(c *gin.Context) {
 			"gc_cycles":    m.NumGC,
 		},
 		"service": gin.H{
-			"jobs_processed": 0,    // Would be tracked in real implementation
-			"jobs_pending":   0,    // Would be tracked in real implementation
-			"jobs_failed":    0,    // Would be tracked in real implementation
-			"uptime_seconds": 0,    // Would be tracked in real implementation
+			"jobs_processed": 0, // Would be tracked in real implementation
+			"jobs_pending":   0, // Would be tracked in real implementation
+			"jobs_failed":    0, // Would be tracked in real implementation
+			"uptime_seconds": 0, // Would be tracked in real implementation
 		},
 	}
 
