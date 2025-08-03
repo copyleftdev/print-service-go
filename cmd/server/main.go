@@ -11,8 +11,8 @@ import (
 	"time"
 
 	"print-service/internal/api"
-	"print-service/internal/pkg/config"
 	"print-service/internal/infrastructure/logger"
+	"print-service/internal/pkg/config"
 )
 
 func main() {
@@ -23,12 +23,12 @@ func main() {
 	}
 
 	// Initialize logger
-	logger := logger.NewStructuredLogger(cfg.Logger)
-	defer logger.Sync()
+	log := logger.NewStructuredLogger(&cfg.Logger)
+	defer func() { _ = log.Sync() }()
 
 	// Create HTTP server
-	server := api.NewServer(cfg, logger)
-	
+	server := api.NewServer(cfg, log)
+
 	httpServer := &http.Server{
 		Addr:         fmt.Sprintf(":%d", cfg.Server.Port),
 		Handler:      server.Handler(),
@@ -39,11 +39,11 @@ func main() {
 
 	// Start server in a goroutine
 	go func() {
-		logger.Info("Starting HTTP server", "port", cfg.Server.Port)
+		log.Info("Starting HTTP server", "port", cfg.Server.Port)
 		if err := httpServer.ListenAndServe(); err != nil && err != http.ErrServerClosed {
-			logger.Error("Failed to start server", "error", err)
-			os.Exit(1)
+			log.Error("Server failed to start", "error", err)
 		}
+		os.Exit(1)
 	}()
 
 	// Wait for interrupt signal to gracefully shutdown the server
@@ -51,16 +51,15 @@ func main() {
 	signal.Notify(quit, syscall.SIGINT, syscall.SIGTERM)
 	<-quit
 
-	logger.Info("Shutting down server...")
+	log.Info("Shutting down server...")
 
 	// Give outstanding requests a deadline for completion
 	ctx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
 	defer cancel()
 
 	if err := httpServer.Shutdown(ctx); err != nil {
-		logger.Error("Server forced to shutdown", "error", err)
-		os.Exit(1)
+		log.Error("Server forced to shutdown", "error", err)
 	}
 
-	logger.Info("Server exited")
+	log.Info("Server exited")
 }

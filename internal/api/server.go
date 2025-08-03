@@ -3,18 +3,19 @@ package api
 import (
 	"net/http"
 
-	"github.com/gin-gonic/gin"
 	"print-service/internal/api/handlers"
 	"print-service/internal/api/middleware"
 	"print-service/internal/infrastructure/logger"
 	"print-service/internal/pkg/config"
+
+	"github.com/gin-gonic/gin"
 )
 
 // Server represents the HTTP server
 type Server struct {
-	config  *config.Config
-	logger  logger.Logger
-	router  *gin.Engine
+	config *config.Config
+	logger logger.Logger
+	router *gin.Engine
 }
 
 // NewServer creates a new HTTP server

@@ -23,14 +23,14 @@ type PageOptions struct {
 
 // LayoutOptions represents layout-specific options
 type LayoutOptions struct {
-	WaitForFonts    bool          `json:"wait_for_fonts"`
-	WaitForImages   bool          `json:"wait_for_images"`
-	WaitTimeout     time.Duration `json:"wait_timeout"`
-	ViewportWidth   int           `json:"viewport_width"`
-	ViewportHeight  int           `json:"viewport_height"`
-	DPI             int           `json:"dpi"`
-	PrintMediaType  bool          `json:"print_media_type"`
-	EmulateMedia    string        `json:"emulate_media"`
+	WaitForFonts   bool          `json:"wait_for_fonts"`
+	WaitForImages  bool          `json:"wait_for_images"`
+	WaitTimeout    time.Duration `json:"wait_timeout"`
+	ViewportWidth  int           `json:"viewport_width"`
+	ViewportHeight int           `json:"viewport_height"`
+	DPI            int           `json:"dpi"`
+	PrintMediaType bool          `json:"print_media_type"`
+	EmulateMedia   string        `json:"emulate_media"`
 }
 
 // RenderOptions represents rendering-specific options
@@ -55,22 +55,22 @@ type OutputOptions struct {
 
 // PerformanceOptions represents performance-specific options
 type PerformanceOptions struct {
-	EnableCache     bool          `json:"enable_cache"`
-	CacheTTL        time.Duration `json:"cache_ttl"`
-	MaxMemory       int64         `json:"max_memory"`
-	Timeout         time.Duration `json:"timeout"`
-	ConcurrentJobs  int           `json:"concurrent_jobs"`
-	ResourceLimits  ResourceLimits `json:"resource_limits"`
+	EnableCache    bool           `json:"enable_cache"`
+	CacheTTL       time.Duration  `json:"cache_ttl"`
+	MaxMemory      int64          `json:"max_memory"`
+	Timeout        time.Duration  `json:"timeout"`
+	ConcurrentJobs int            `json:"concurrent_jobs"`
+	ResourceLimits ResourceLimits `json:"resource_limits"`
 }
 
 // SecurityOptions represents security-specific options
 type SecurityOptions struct {
-	SanitizeHTML    bool     `json:"sanitize_html"`
-	AllowedDomains  []string `json:"allowed_domains"`
-	BlockedDomains  []string `json:"blocked_domains"`
-	MaxFileSize     int64    `json:"max_file_size"`
-	AllowJavaScript bool     `json:"allow_javascript"`
-	AllowExternalCSS bool    `json:"allow_external_css"`
+	SanitizeHTML     bool     `json:"sanitize_html"`
+	AllowedDomains   []string `json:"allowed_domains"`
+	BlockedDomains   []string `json:"blocked_domains"`
+	MaxFileSize      int64    `json:"max_file_size"`
+	AllowJavaScript  bool     `json:"allow_javascript"`
+	AllowExternalCSS bool     `json:"allow_external_css"`
 }
 
 // RenderQuality represents rendering quality levels
@@ -87,10 +87,10 @@ const (
 type ColorProfile string
 
 const (
-	ColorProfileRGB   ColorProfile = "rgb"
-	ColorProfileCMYK  ColorProfile = "cmyk"
-	ColorProfileGray  ColorProfile = "gray"
-	ColorProfilesRGB  ColorProfile = "srgb"
+	ColorProfileRGB  ColorProfile = "rgb"
+	ColorProfileCMYK ColorProfile = "cmyk"
+	ColorProfileGray ColorProfile = "gray"
+	ColorProfilesRGB ColorProfile = "srgb"
 )
 
 // CompressionLevel represents compression levels
@@ -124,9 +124,9 @@ type Watermark struct {
 
 // ResourceLimits represents resource usage limits
 type ResourceLimits struct {
-	MaxCPU    float64 `json:"max_cpu"`
-	MaxMemory int64   `json:"max_memory"`
-	MaxDisk   int64   `json:"max_disk"`
+	MaxCPU    float64       `json:"max_cpu"`
+	MaxMemory int64         `json:"max_memory"`
+	MaxDisk   int64         `json:"max_disk"`
 	MaxTime   time.Duration `json:"max_time"`
 }
 
@@ -172,7 +172,7 @@ func DefaultPrintOptions() PrintOptions {
 			ConcurrentJobs: 4,
 			ResourceLimits: ResourceLimits{
 				MaxCPU:    0.8,
-				MaxMemory: 1024 * 1024 * 1024, // 1GB
+				MaxMemory: 1024 * 1024 * 1024,      // 1GB
 				MaxDisk:   10 * 1024 * 1024 * 1024, // 10GB
 				MaxTime:   5 * time.Minute,
 			},

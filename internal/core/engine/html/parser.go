@@ -5,8 +5,9 @@ import (
 	"io"
 	"strings"
 
-	"golang.org/x/net/html"
 	"print-service/internal/core/domain"
+
+	"golang.org/x/net/html"
 )
 
 // Parser handles HTML parsing and DOM tree construction
@@ -217,25 +218,25 @@ func (n *DOMNode) Render(w io.Writer) error {
 		for key, value := range n.Attributes {
 			fmt.Fprintf(w, ` %s="%s"`, key, html.EscapeString(value))
 		}
-		
+
 		// Self-closing tags
 		if n.isSelfClosing() {
 			_, err := w.Write([]byte(" />"))
 			return err
 		}
-		
+
 		_, err := w.Write([]byte(">"))
 		if err != nil {
 			return err
 		}
-		
+
 		// Children
 		for _, child := range n.Children {
 			if err := child.Render(w); err != nil {
 				return err
 			}
 		}
-		
+
 		// Closing tag
 		fmt.Fprintf(w, "</%s>", n.Data)
 		return nil

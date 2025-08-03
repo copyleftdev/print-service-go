@@ -15,13 +15,13 @@ import (
 
 // PrintService orchestrates the document printing process
 type PrintService struct {
-	htmlParser    *html.Parser
-	cssParser     *css.Parser
-	layoutEngine  *layout.Engine
-	cacheService  *CacheService
+	htmlParser     *html.Parser
+	cssParser      *css.Parser
+	layoutEngine   *layout.Engine
+	cacheService   *CacheService
 	storageService *StorageService
-	logger        logger.Logger
-	config        config.PrintConfig
+	logger         logger.Logger
+	config         config.PrintConfig
 }
 
 // NewPrintService creates a new print service
@@ -55,7 +55,7 @@ func NewPrintService(cfg config.PrintConfig, logger logger.Logger) (*PrintServic
 // ProcessDocument processes a document and generates output
 func (ps *PrintService) ProcessDocument(ctx context.Context, doc *domain.Document) (*domain.RenderResult, error) {
 	ps.logger.Info("Processing document", "document_id", doc.ID, "content_type", doc.ContentType)
-	
+
 	startTime := time.Now()
 
 	// Validate document
@@ -99,21 +99,21 @@ func (ps *PrintService) ProcessDocument(ctx context.Context, doc *domain.Documen
 
 	// Create result
 	result := &domain.RenderResult{
-		OutputPath:  outputPath,
-		OutputSize:  ps.getFileSize(outputPath),
-		PageCount:   ps.calculatePageCount(layoutTree, doc.Options.Page),
-		RenderTime:  time.Since(startTime),
-		CacheHit:    false,
-		Warnings:    make([]string, 0),
+		OutputPath: outputPath,
+		OutputSize: ps.getFileSize(outputPath),
+		PageCount:  ps.calculatePageCount(layoutTree, doc.Options.Page),
+		RenderTime: time.Since(startTime),
+		CacheHit:   false,
+		Warnings:   make([]string, 0),
 	}
 
 	// Cache the result
 	if doc.Options.Performance.EnableCache {
-		ps.cacheService.Set(cacheKey, result, doc.Options.Performance.CacheTTL)
+		_ = ps.cacheService.Set(cacheKey, result, doc.Options.Performance.CacheTTL)
 	}
 
-	ps.logger.Info("Document processed successfully", 
-		"document_id", doc.ID, 
+	ps.logger.Info("Document processed successfully",
+		"document_id", doc.ID,
 		"output_path", outputPath,
 		"render_time", result.RenderTime,
 		"page_count", result.PageCount)
@@ -177,14 +177,14 @@ func (ps *PrintService) parseHTML(content string, securityOptions domain.Securit
 }
 
 // parseCSS parses CSS content from HTML
-func (ps *PrintService) parseCSS(content string, securityOptions domain.SecurityOptions) (*css.Stylesheet, error) {
+func (ps *PrintService) parseCSS(content string, _ domain.SecurityOptions) (*css.Stylesheet, error) {
 	// Extract CSS from HTML (simplified - would need proper extraction)
 	cssContent := ps.extractCSS(content)
 	return ps.cssParser.Parse(cssContent)
 }
 
 // extractCSS extracts CSS from HTML content
-func (ps *PrintService) extractCSS(htmlContent string) string {
+func (ps *PrintService) extractCSS(_ string) string {
 	// Simplified CSS extraction - in a real implementation this would
 	// properly extract CSS from <style> tags and external stylesheets
 	return ""
@@ -212,7 +212,7 @@ func (ps *PrintService) generateCacheKey(doc *domain.Document) string {
 }
 
 // getFileSize gets the size of a file
-func (ps *PrintService) getFileSize(path string) int64 {
+func (ps *PrintService) getFileSize(_ string) int64 {
 	// Simplified - would use actual file stat
 	return 1024 // placeholder
 }
@@ -223,18 +223,18 @@ func (ps *PrintService) calculatePageCount(layoutTree *domain.LayoutNode, pageOp
 	if layoutTree == nil {
 		return 1
 	}
-	
+
 	pageHeight := pageOptions.Size.Height
 	if pageHeight <= 0 {
 		return 1
 	}
-	
+
 	totalHeight := layoutTree.Box.Height
 	pages := int(totalHeight/pageHeight) + 1
-	
+
 	if pages < 1 {
 		pages = 1
 	}
-	
+
 	return pages
 }

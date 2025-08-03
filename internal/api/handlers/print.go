@@ -5,10 +5,11 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/gin-gonic/gin"
 	"print-service/internal/core/domain"
 	"print-service/internal/infrastructure/logger"
 	"print-service/internal/pkg/config"
+
+	"github.com/gin-gonic/gin"
 )
 
 // PrintHandler handles print-related HTTP requests
@@ -27,9 +28,9 @@ func NewPrintHandler(cfg *config.Config, logger logger.Logger) *PrintHandler {
 
 // PrintRequest represents a print request
 type PrintRequest struct {
-	Content     string                `json:"content" binding:"required"`
-	ContentType domain.ContentType    `json:"content_type"`
-	Options     domain.PrintOptions   `json:"options"`
+	Content     string                  `json:"content" binding:"required"`
+	ContentType domain.ContentType      `json:"content_type"`
+	Options     domain.PrintOptions     `json:"options"`
 	Metadata    domain.DocumentMetadata `json:"metadata"`
 }
 
@@ -63,8 +64,8 @@ func (ph *PrintHandler) Print(c *gin.Context) {
 
 	// Return job information
 	c.JSON(http.StatusAccepted, gin.H{
-		"job_id": job.ID,
-		"status": job.Status,
+		"job_id":  job.ID,
+		"status":  job.Status,
 		"message": "Print job submitted successfully",
 	})
 }
@@ -97,8 +98,8 @@ func (ph *PrintHandler) Cancel(c *gin.Context) {
 	ph.logger.Info("Cancelling print job", "job_id", jobID)
 
 	c.JSON(http.StatusOK, gin.H{
-		"job_id": jobID,
-		"status": "cancelled",
+		"job_id":  jobID,
+		"status":  "cancelled",
 		"message": "Print job cancelled successfully",
 	})
 }

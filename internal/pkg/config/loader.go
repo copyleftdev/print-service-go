@@ -1,3 +1,4 @@
+// Package config provides configuration loading and validation for the print service.
 package config
 
 import (
@@ -204,7 +205,7 @@ func validate(cfg *Config) error {
 	// Create directories if they don't exist
 	dirs := []string{cfg.Print.OutputDirectory, cfg.Print.TempDirectory}
 	for _, dir := range dirs {
-		if err := os.MkdirAll(dir, 0755); err != nil {
+		if err := os.MkdirAll(dir, 0750); err != nil {
 			return fmt.Errorf("failed to create directory %s: %w", dir, err)
 		}
 	}
@@ -230,13 +231,17 @@ func validate(cfg *Config) error {
 // Helper functions for parsing environment variables
 func parseInt(s string) int {
 	var result int
-	fmt.Sscanf(s, "%d", &result)
+	if _, err := fmt.Sscanf(s, "%d", &result); err != nil {
+		return 0
+	}
 	return result
 }
 
 func parseInt64(s string) int64 {
 	var result int64
-	fmt.Sscanf(s, "%d", &result)
+	if _, err := fmt.Sscanf(s, "%d", &result); err != nil {
+		return 0
+	}
 	return result
 }
 
@@ -245,14 +250,14 @@ func GetConfigPath(filename string) string {
 	if filepath.IsAbs(filename) {
 		return filename
 	}
-	
+
 	// Look in configs directory first
 	configsPath := filepath.Join("configs", filename)
 	if _, err := os.Stat(configsPath); err == nil {
 		abs, _ := filepath.Abs(configsPath)
 		return abs
 	}
-	
+
 	// Fall back to current directory
 	abs, _ := filepath.Abs(filename)
 	return abs

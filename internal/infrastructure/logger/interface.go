@@ -1,3 +1,4 @@
+// Package logger provides structured logging interfaces and implementations.
 package logger
 
 // Logger defines the logging interface
@@ -15,6 +16,7 @@ type Logger interface {
 type LogLevel int
 
 const (
+	// DebugLevel represents the debug log level
 	DebugLevel LogLevel = iota
 	InfoLevel
 	WarnLevel
