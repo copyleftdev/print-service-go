@@ -41,9 +41,20 @@ jobs:
     - name: Run go vet
       run: go vet ./...
 
-    - name: Run tests
+    - name: Generate basic test data
       run: |
-        go test -v -race -timeout=300s -coverprofile=coverage.out ./...
+        # Generate only basic test data for CI (avoid large files)
+        go run cmd/testgen/main.go -variants=basic -output=./testdata/golden -verbose
+        
+    - name: Run tests (excluding ultra rigor)
+      run: |
+        # Run all tests except ultra rigor to avoid CI timeouts and large file issues
+        go test -v -race -timeout=300s -coverprofile=coverage.out $(go list ./... | grep -v 'ultra_rigor')
+        
+    - name: Run basic golden tests
+      run: |
+        # Run only basic golden tests in CI
+        go test -v -timeout=60s ./internal/tests/golden/ -run TestGoldenBasic
 
     - name: Generate coverage report
       run: |
@@ -91,6 +102,34 @@ jobs:
       uses: github/codeql-action/upload-sarif@v3
       with:
         sarif_file: gosec.sarif
+
+  # Ultra Rigor Testing (Manual/Optional)
+  ultra-rigor:
+    name: Ultra Rigor Testing
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[ultra-rigor]')
+    timeout-minutes: 60
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Go
+      uses: actions/setup-go@v5
+      with:
+        go-version: ${{ env.GO_VERSION }}
+        cache: true
+
+    - name: Generate ultra rigor test data
+      run: |
+        # Generate ultra rigor test data (this may take several minutes)
+        echo "Generating ultra rigor test data..."
+        go run cmd/testgen/main.go -variants=ultra-rigor -output=./testdata/golden -verbose
+        
+    - name: Run ultra rigor tests
+      run: |
+        # Run the full ultra rigor test suite
+        go test -v -timeout=45m ./internal/tests/golden/ -run TestGoldenUltraRigor
 
   # Build Binaries
   build:
