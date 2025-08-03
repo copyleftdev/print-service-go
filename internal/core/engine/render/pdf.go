@@ -4,8 +4,9 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/jung-kurt/gofpdf"
 	"print-service/internal/core/domain"
+
+	"github.com/jung-kurt/gofpdf"
 )
 
 // PDFRenderer handles PDF generation with advanced rendering capabilities
@@ -79,12 +80,12 @@ func (r *PDFRenderer) Render(layout *domain.LayoutNode, options domain.PrintOpti
 
 	// Create rendering context with document parameters
 	ctx := RenderContext{
-		PDF:         pdf,                            // PDF document instance
-		CurrentPage: 1,                              // Start with page 1
-		PageWidth:   options.Page.Size.Width,       // Page width in mm
-		PageHeight:  options.Page.Size.Height,      // Page height in mm
-		DPI:         float64(options.Layout.DPI),   // Resolution
-		Scale:       options.Page.Scale,            // Scaling factor
+		PDF:         pdf,                         // PDF document instance
+		CurrentPage: 1,                           // Start with page 1
+		PageWidth:   options.Page.Size.Width,     // Page width in mm
+		PageHeight:  options.Page.Size.Height,    // Page height in mm
+		DPI:         float64(options.Layout.DPI), // Resolution
+		Scale:       options.Page.Scale,          // Scaling factor
 	}
 
 	// Add the first page to the document
@@ -157,8 +158,8 @@ func (r *PDFRenderer) RenderText(content string, style domain.ComputedStyle, ctx
 	}
 
 	// Configure font properties
-	fontFamily := r.mapFontFamily(style.Font.Family)             // Map CSS font to PDF font
-	fontSize := style.Font.Size                                  // Font size in points
+	fontFamily := r.mapFontFamily(style.Font.Family)                 // Map CSS font to PDF font
+	fontSize := style.Font.Size                                      // Font size in points
 	fontStyle := r.mapFontStyle(style.Font.Weight, style.Font.Style) // Bold/italic styling
 
 	// Apply font settings to PDF context
@@ -238,31 +239,31 @@ func (r *PDFRenderer) mapFontFamily(family string) string {
 	family = strings.ToLower(family)
 	switch {
 	case strings.Contains(family, "serif"):
-		return "Times"   // Times New Roman for serif fonts
+		return "Times" // Times New Roman for serif fonts
 	case strings.Contains(family, "sans-serif"):
-		return "Arial"   // Arial for sans-serif fonts
+		return "Arial" // Arial for sans-serif fonts
 	case strings.Contains(family, "monospace"):
 		return "Courier" // Courier for monospace fonts
 	default:
-		return "Arial"   // Default fallback font
+		return "Arial" // Default fallback font
 	}
 }
 
 // mapFontStyle maps CSS font weight and style to PDF font style codes
 func (r *PDFRenderer) mapFontStyle(weight int, style string) string {
-	bold := weight >= 700                          // Bold if weight >= 700
-	italic := strings.ToLower(style) == "italic"   // Italic if style is italic
+	bold := weight >= 700                        // Bold if weight >= 700
+	italic := strings.ToLower(style) == "italic" // Italic if style is italic
 
 	// Combine bold and italic styles
 	switch {
 	case bold && italic:
 		return "BI" // Bold + Italic
 	case bold:
-		return "B"  // Bold only
+		return "B" // Bold only
 	case italic:
-		return "I"  // Italic only
+		return "I" // Italic only
 	default:
-		return ""   // Regular style
+		return "" // Regular style
 	}
 }
 

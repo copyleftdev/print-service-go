@@ -1,3 +1,4 @@
+// Package config provides configuration loading and validation for the print service.
 package config
 
 import (
@@ -249,14 +250,14 @@ func GetConfigPath(filename string) string {
 	if filepath.IsAbs(filename) {
 		return filename
 	}
-	
+
 	// Look in configs directory first
 	configsPath := filepath.Join("configs", filename)
 	if _, err := os.Stat(configsPath); err == nil {
 		abs, _ := filepath.Abs(configsPath)
 		return abs
 	}
-	
+
 	// Fall back to current directory
 	abs, _ := filepath.Abs(filename)
 	return abs

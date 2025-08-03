@@ -43,7 +43,7 @@ func (pb *PageBreaker) processNode(node *domain.LayoutNode, currentPage *PageBre
 
 	// Check if node fits on current page
 	nodeBottom := node.Box.Y + node.Box.Height
-	
+
 	if nodeBottom > currentPage.EndY {
 		// Node doesn't fit, need to break
 		if pb.canBreakBefore(node) {
@@ -55,7 +55,7 @@ func (pb *PageBreaker) processNode(node *domain.LayoutNode, currentPage *PageBre
 				EndY:       currentPage.EndY + pageHeight,
 				Nodes:      make([]*domain.LayoutNode, 0),
 			}
-			
+
 			// Adjust node position for new page
 			node.Box.Y = currentPage.StartY + (node.Box.Y - currentPage.StartY)
 		} else {
@@ -111,7 +111,7 @@ func (pb *PageBreaker) breakTextNode(node *domain.LayoutNode, currentPage *PageB
 	// Calculate how much text fits on current page
 	availableHeight := currentPage.EndY - node.Box.Y
 	lineHeight := node.Style.Font.Size * node.Style.Text.LineHeight
-	
+
 	if lineHeight <= 0 {
 		lineHeight = node.Style.Font.Size * 1.2
 	}
@@ -215,10 +215,10 @@ func joinLines(lines []string) string {
 
 // PageBreak represents a page break in the document
 type PageBreak struct {
-	PageNumber int                    `json:"page_number"`
-	StartY     float64               `json:"start_y"`
-	EndY       float64               `json:"end_y"`
-	Nodes      []*domain.LayoutNode  `json:"nodes"`
+	PageNumber int                  `json:"page_number"`
+	StartY     float64              `json:"start_y"`
+	EndY       float64              `json:"end_y"`
+	Nodes      []*domain.LayoutNode `json:"nodes"`
 }
 
 // GetPageCount returns the total number of pages

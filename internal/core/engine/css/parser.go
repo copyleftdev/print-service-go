@@ -111,7 +111,7 @@ func (p *Parser) parseSelectors(selectorText string) ([]*Selector, error) {
 // parseSelector parses a single CSS selector
 func (p *Parser) parseSelector(selectorText string) (*Selector, error) {
 	selector := &Selector{
-		Text:       selectorText,
+		Text:        selectorText,
 		Specificity: p.calculateSpecificity(selectorText),
 	}
 

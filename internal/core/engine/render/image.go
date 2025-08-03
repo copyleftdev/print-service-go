@@ -6,8 +6,9 @@ import (
 	"image/jpeg"
 	"image/png"
 
-	"github.com/fogleman/gg"
 	"print-service/internal/core/domain"
+
+	"github.com/fogleman/gg"
 )
 
 // ImageRenderer handles image generation
@@ -18,11 +19,11 @@ type ImageRenderer struct {
 
 // ImageRenderOptions configures image rendering
 type ImageRenderOptions struct {
-	Antialias       bool
-	Interpolation   InterpolationType
-	ColorSpace      ColorSpace
-	Quality         int
-	Optimization    bool
+	Antialias     bool
+	Interpolation InterpolationType
+	ColorSpace    ColorSpace
+	Quality       int
+	Optimization  bool
 }
 
 // InterpolationType represents image interpolation types
@@ -46,12 +47,12 @@ const (
 
 // ImageRenderContext provides context for image rendering
 type ImageRenderContext struct {
-	Canvas      *gg.Context
-	Width       int
-	Height      int
-	DPI         float64
-	Scale       float64
-	Background  domain.Color
+	Canvas     *gg.Context
+	Width      int
+	Height     int
+	DPI        float64
+	Scale      float64
+	Background domain.Color
 }
 
 // NewImageRenderer creates a new image renderer
@@ -278,25 +279,25 @@ func (r *ImageRenderer) drawDashedLine(canvas *gg.Context, x1, y1, x2, y2 float6
 // ExportPNG exports the canvas as PNG
 func (r *ImageRenderer) ExportPNG(canvas *gg.Context) ([]byte, error) {
 	img := canvas.Image()
-	
+
 	var buf bytes.Buffer
 	if err := png.Encode(&buf, img); err != nil {
 		return nil, fmt.Errorf("failed to encode PNG: %w", err)
 	}
-	
+
 	return buf.Bytes(), nil
 }
 
 // ExportJPEG exports the canvas as JPEG
 func (r *ImageRenderer) ExportJPEG(canvas *gg.Context, quality int) ([]byte, error) {
 	img := canvas.Image()
-	
+
 	var buf bytes.Buffer
 	options := &jpeg.Options{Quality: quality}
 	if err := jpeg.Encode(&buf, img, options); err != nil {
 		return nil, fmt.Errorf("failed to encode JPEG: %w", err)
 	}
-	
+
 	return buf.Bytes(), nil
 }
 

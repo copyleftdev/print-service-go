@@ -3,9 +3,10 @@ package logger
 import (
 	"os"
 
+	"print-service/internal/pkg/config"
+
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
-	"print-service/internal/pkg/config"
 )
 
 // StructuredLogger implements Logger using zap

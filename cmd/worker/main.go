@@ -9,9 +9,9 @@ import (
 	"time"
 
 	"print-service/internal/core/services"
+	"print-service/internal/infrastructure/logger"
 	"print-service/internal/pkg/config"
 	"print-service/internal/pkg/pool"
-	"print-service/internal/infrastructure/logger"
 )
 
 func main() {

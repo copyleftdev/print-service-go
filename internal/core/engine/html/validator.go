@@ -85,14 +85,14 @@ func (v *Validator) validateTags(content string) error {
 		if strings.HasPrefix(fullTag, "</") {
 			// Closing tag
 			if len(tagStack) == 0 {
-				return domain.NewPrintError(domain.ErrCodeInvalidInput, 
+				return domain.NewPrintError(domain.ErrCodeInvalidInput,
 					fmt.Sprintf("unexpected closing tag: %s", tagName), domain.ErrInvalidHTML)
 			}
 
 			// Check if it matches the last opened tag
 			lastTag := tagStack[len(tagStack)-1]
 			if lastTag != tagName {
-				return domain.NewPrintError(domain.ErrCodeInvalidInput, 
+				return domain.NewPrintError(domain.ErrCodeInvalidInput,
 					fmt.Sprintf("mismatched closing tag: expected %s, got %s", lastTag, tagName), domain.ErrInvalidHTML)
 			}
 
@@ -112,7 +112,7 @@ func (v *Validator) validateTags(content string) error {
 
 	// Check for unclosed tags
 	if len(tagStack) > 0 {
-		return domain.NewPrintError(domain.ErrCodeInvalidInput, 
+		return domain.NewPrintError(domain.ErrCodeInvalidInput,
 			fmt.Sprintf("unclosed tags: %v", tagStack), domain.ErrInvalidHTML)
 	}
 
@@ -155,7 +155,7 @@ func (v *Validator) validateAttributeString(attributes string) error {
 
 		// Remove quotes from value
 		if (strings.HasPrefix(attrValue, `"`) && strings.HasSuffix(attrValue, `"`)) ||
-		   (strings.HasPrefix(attrValue, `'`) && strings.HasSuffix(attrValue, `'`)) {
+			(strings.HasPrefix(attrValue, `'`) && strings.HasSuffix(attrValue, `'`)) {
 			attrValue = attrValue[1 : len(attrValue)-1]
 		}
 
@@ -173,14 +173,14 @@ func (v *Validator) validateSpecificAttribute(name, value string) error {
 	switch name {
 	case "id":
 		if !isValidIdentifier(value) {
-			return domain.NewPrintError(domain.ErrCodeInvalidInput, 
+			return domain.NewPrintError(domain.ErrCodeInvalidInput,
 				fmt.Sprintf("invalid id attribute: %s", value), domain.ErrInvalidHTML)
 		}
 	case "class":
 		classes := strings.Fields(value)
 		for _, class := range classes {
 			if !isValidIdentifier(class) {
-				return domain.NewPrintError(domain.ErrCodeInvalidInput, 
+				return domain.NewPrintError(domain.ErrCodeInvalidInput,
 					fmt.Sprintf("invalid class name: %s", class), domain.ErrInvalidHTML)
 			}
 		}
@@ -202,10 +202,10 @@ func (v *Validator) validateURL(url string) error {
 	// Check for dangerous protocols
 	dangerousProtocols := []string{"javascript:", "vbscript:", "data:text/html"}
 	lowerURL := strings.ToLower(url)
-	
+
 	for _, protocol := range dangerousProtocols {
 		if strings.HasPrefix(lowerURL, protocol) {
-			return domain.NewPrintError(domain.ErrCodeSecurity, 
+			return domain.NewPrintError(domain.ErrCodeSecurity,
 				fmt.Sprintf("dangerous URL protocol: %s", protocol), domain.ErrUnsafeContent)
 		}
 	}

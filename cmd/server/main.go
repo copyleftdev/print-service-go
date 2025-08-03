@@ -11,8 +11,8 @@ import (
 	"time"
 
 	"print-service/internal/api"
-	"print-service/internal/pkg/config"
 	"print-service/internal/infrastructure/logger"
+	"print-service/internal/pkg/config"
 )
 
 func main() {
@@ -28,7 +28,7 @@ func main() {
 
 	// Create HTTP server
 	server := api.NewServer(cfg, log)
-	
+
 	httpServer := &http.Server{
 		Addr:         fmt.Sprintf(":%d", cfg.Server.Port),
 		Handler:      server.Handler(),
