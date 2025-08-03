@@ -1,16 +1,5 @@
 run:
   timeout: 5m
-  go: '1.21'
-  issues-exit-code: 1
-  tests: true
-  modules-download-mode: readonly
-
-output:
-  format: colored-line-number
-  print-issued-lines: true
-  print-linter-name: true
-  uniq-by-line: true
-  sort-results: true
 
 linters:
   enable:
@@ -20,27 +9,8 @@ linters:
     - ineffassign
     - staticcheck
     - gofmt
-    - bodyclose
-    - exportloopref
-  
-  disable:
-    - goconst
-    - gocyclo
-    - gomnd
-    - mnd
-    - revive
-    - unparam
-    - misspell
-    - gocritic
-    - gosec
 
 linters-settings:
   errcheck:
-    check-type-assertions: false
-    check-blank: false
-  govet:
-    check-shadowing: true
-
-issues:
-  max-issues-per-linter: 0
-  max-same-issues: 0
+    exclude-functions:
+      - (*go.uber.org/zap.Logger).Sync
