@@ -48,8 +48,8 @@ func (g *TestDataGenerator) createHTMLTestCases() []TestCase {
 		Tags:        []string{"html", "css", "styling"},
 		Input: TestInput{
 			Document: domain.Document{
-				ID:      "doc_html_css",
-				Content: `<html><head><style>body{font-family:Arial;margin:20px;}h1{color:blue;}</style></head><body><h1>Styled Document</h1><p>This document has CSS styling.</p></body></html>`,
+				ID:          "doc_html_css",
+				Content:     `<html><head><style>body{font-family:Arial;margin:20px;}h1{color:blue;}</style></head><body><h1>Styled Document</h1><p>This document has CSS styling.</p></body></html>`,
 				ContentType: domain.ContentTypeHTML,
 				Metadata: domain.DocumentMetadata{
 					Title:   "HTML with CSS",
@@ -76,8 +76,8 @@ func (g *TestDataGenerator) createHTMLTestCases() []TestCase {
 		Tags:        []string{"html", "table", "data"},
 		Input: TestInput{
 			Document: domain.Document{
-				ID: "doc_html_table",
-				Content: `<html><body><h1>Data Table</h1><table border="1"><tr><th>Name</th><th>Age</th><th>City</th></tr><tr><td>John</td><td>30</td><td>New York</td></tr><tr><td>Jane</td><td>25</td><td>London</td></tr></table></body></html>`,
+				ID:          "doc_html_table",
+				Content:     `<html><body><h1>Data Table</h1><table border="1"><tr><th>Name</th><th>Age</th><th>City</th></tr><tr><td>John</td><td>30</td><td>New York</td></tr><tr><td>Jane</td><td>25</td><td>London</td></tr></table></body></html>`,
 				ContentType: domain.ContentTypeHTML,
 				Metadata: domain.DocumentMetadata{
 					Title:   "Table Test",
@@ -138,8 +138,8 @@ func (g *TestDataGenerator) createMarkdownTestCases() []TestCase {
 		Tags:        []string{"markdown", "code", "syntax"},
 		Input: TestInput{
 			Document: domain.Document{
-				ID: "doc_md_code",
-				Content: "# Code Example\n\nHere's some Go code:\n\n```go\nfunc main() {\n    fmt.Println(\"Hello, World!\")\n}\n```\n\nAnd some inline `code` too.",
+				ID:          "doc_md_code",
+				Content:     "# Code Example\n\nHere's some Go code:\n\n```go\nfunc main() {\n    fmt.Println(\"Hello, World!\")\n}\n```\n\nAnd some inline `code` too.",
 				ContentType: domain.ContentTypeMarkdown,
 				Metadata: domain.DocumentMetadata{
 					Title:   "Markdown Code",

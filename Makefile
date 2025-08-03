@@ -188,6 +188,16 @@ generate-golden-basic: ## Generate basic golden test variants
 	@echo "Generating basic golden test data..."
 	@go run cmd/testgen/main.go -variants=basic -output=./testdata/golden -verbose
 
+.PHONY: generate-golden-rigor
+generate-golden-rigor: ## Generate enhanced rigor golden test data
+	@echo "Generating enhanced rigor golden test data..."
+	./testgen -variant=rigor -output=testdata/golden/rigor_golden_data.json -verbose
+
+.PHONY: generate-golden-true-rigor
+generate-golden-true-rigor: ## Generate true rigor golden test data
+	@echo "Generating true rigor golden test data..."
+	./testgen -variant=true-rigor -output=testdata/golden/true_rigor_golden_data.json -verbose
+
 .PHONY: generate-golden-edge
 generate-golden-edge: ## Generate edge case golden test variants
 	@echo "Generating edge case golden test data..."

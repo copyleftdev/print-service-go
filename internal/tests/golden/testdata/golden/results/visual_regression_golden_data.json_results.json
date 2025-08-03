@@ -1,0 +1,90 @@
+{
+  "suite_name": "visual_regression",
+  "start_time": "2025-08-03T14:02:34.08104329-07:00",
+  "end_time": "2025-08-03T14:02:34.081113822-07:00",
+  "duration": 70532,
+  "total_count": 3,
+  "passed_count": 3,
+  "failed_count": 0,
+  "skipped_count": 0,
+  "test_results": [
+    {
+      "test_case_id": "visual_regression_0",
+      "test_name": "CSS Layout Test",
+      "status": "passed",
+      "start_time": "2025-08-03T14:02:34.08104693-07:00",
+      "end_time": "2025-08-03T14:02:34.081067901-07:00",
+      "duration": 20971,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 248,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "visual_regression_1",
+      "test_name": "Typography Test",
+      "status": "passed",
+      "start_time": "2025-08-03T14:02:34.081068451-07:00",
+      "end_time": "2025-08-03T14:02:34.081082951-07:00",
+      "duration": 14500,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 198,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "visual_regression_2",
+      "test_name": "Color and Graphics Test",
+      "status": "passed",
+      "start_time": "2025-08-03T14:02:34.081083421-07:00",
+      "end_time": "2025-08-03T14:02:34.081104742-07:00",
+      "duration": 21321,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 162,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    }
+  ]
+}

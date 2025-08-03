@@ -42,7 +42,7 @@ func (r *TestRunner) RunTestSuite(ctx context.Context, suite TestSuite) (*TestSu
 	for _, testCase := range suite.TestCases {
 		caseResult := r.runTestCase(ctx, testCase)
 		result.TestResults = append(result.TestResults, caseResult)
-		
+
 		if caseResult.Status == TestStatusFailed {
 			result.FailedCount++
 		} else if caseResult.Status == TestStatusPassed {
@@ -172,12 +172,12 @@ type ActualOutput struct {
 type TestStatus string
 
 const (
-	TestStatusPending  TestStatus = "pending"
-	TestStatusRunning  TestStatus = "running"
-	TestStatusPassed   TestStatus = "passed"
-	TestStatusFailed   TestStatus = "failed"
-	TestStatusSkipped  TestStatus = "skipped"
-	TestStatusTimeout  TestStatus = "timeout"
+	TestStatusPending TestStatus = "pending"
+	TestStatusRunning TestStatus = "running"
+	TestStatusPassed  TestStatus = "passed"
+	TestStatusFailed  TestStatus = "failed"
+	TestStatusSkipped TestStatus = "skipped"
+	TestStatusTimeout TestStatus = "timeout"
 )
 
 // GetSummary returns a summary of the test suite results

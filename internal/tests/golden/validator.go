@@ -24,8 +24,8 @@ type Tolerances struct {
 func NewResultValidator() *ResultValidator {
 	return &ResultValidator{
 		tolerances: Tolerances{
-			PageCountVariance:  1,                // ±1 page
-			OutputSizeVariance: 0.1,              // ±10%
+			PageCountVariance:  1,                      // ±1 page
+			OutputSizeVariance: 0.1,                    // ±10%
 			RenderTimeVariance: 500 * time.Millisecond, // ±500ms
 		},
 	}
@@ -33,11 +33,11 @@ func NewResultValidator() *ResultValidator {
 
 // ValidationResult represents the result of validating a test case
 type ValidationResult struct {
-	Status      TestStatus               `json:"status"`
-	Score       float64                  `json:"score"`       // 0.0 to 1.0
-	Violations  []ValidationViolation    `json:"violations"`
-	Matches     []ValidationMatch        `json:"matches"`
-	Details     map[string]interface{}   `json:"details"`
+	Status     TestStatus             `json:"status"`
+	Score      float64                `json:"score"` // 0.0 to 1.0
+	Violations []ValidationViolation  `json:"violations"`
+	Matches    []ValidationMatch      `json:"matches"`
+	Details    map[string]interface{} `json:"details"`
 }
 
 // ValidationViolation represents a validation failure
@@ -152,7 +152,7 @@ func (v *ResultValidator) ValidateResult(actual *domain.RenderResult, expected E
 // validatePageCount validates the page count
 func (v *ResultValidator) validatePageCount(actual, expected int, result *ValidationResult) bool {
 	diff := int(math.Abs(float64(actual - expected)))
-	
+
 	if diff <= v.tolerances.PageCountVariance {
 		result.Matches = append(result.Matches, ValidationMatch{
 			Field:   "page_count",
@@ -187,7 +187,7 @@ func (v *ResultValidator) validateOutputSize(actual, expected int64, result *Val
 	}
 
 	variance := math.Abs(float64(actual-expected)) / float64(expected)
-	
+
 	if variance <= v.tolerances.OutputSizeVariance {
 		result.Matches = append(result.Matches, ValidationMatch{
 			Field:   "output_size",
@@ -222,7 +222,7 @@ func (v *ResultValidator) validateRenderTime(actual, expected time.Duration, res
 	}
 
 	diff := time.Duration(math.Abs(float64(actual - expected)))
-	
+
 	if diff <= v.tolerances.RenderTimeVariance {
 		result.Matches = append(result.Matches, ValidationMatch{
 			Field:   "render_time",

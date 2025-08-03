@@ -40,8 +40,24 @@ func main() {
 		testSuites = append(testSuites, generator.GenerateEdgeCaseVariants())
 	case "stress":
 		testSuites = append(testSuites, generator.GenerateStressTestVariants())
+	case "security":
+		testSuites = append(testSuites, generator.GenerateSecurityTestVariants())
+	case "performance":
+		testSuites = append(testSuites, generator.GeneratePerformanceTestVariants())
+	case "rigor":
+		// Enhanced rigor - generate comprehensive test suites
+		enhancedGen := golden.NewEnhancedRigorGenerator()
+		testSuites = enhancedGen.GenerateAllEnhancedVariants()
+	case "true-rigor":
+		// True rigor - generate production-grade test suites
+		trueRigorGen := golden.NewTrueRigorGenerator()
+		testSuites = trueRigorGen.GenerateAllRigorousVariants()
+	case "ultra-rigor":
+		// Ultra rigor - generate next-generation ultra-rigorous test suites
+		ultraRigorGen := golden.NewUltraRigorGenerator()
+		testSuites = ultraRigorGen.GenerateAllUltraRigorousVariants()
 	case "all":
-		testSuites = append(testSuites, 
+		testSuites = append(testSuites,
 			generator.GenerateBasicVariants(),
 			generator.GenerateEdgeCaseVariants(),
 			generator.GenerateStressTestVariants(),
@@ -49,7 +65,7 @@ func main() {
 			generator.GeneratePerformanceTestVariants(),
 		)
 	default:
-		log.Fatalf("Unknown variant type: %s", *variants)
+		log.Fatalf("Unknown variant type: %s (available: basic, edge, stress, security, performance, rigor, true-rigor, ultra-rigor, all)", *variants)
 	}
 
 	// Write test suites to files

@@ -1,0 +1,156 @@
+{
+  "suite_name": "security_tests",
+  "start_time": "2025-08-03T14:00:46.321919842-07:00",
+  "end_time": "2025-08-03T14:00:46.321976734-07:00",
+  "duration": 56892,
+  "total_count": 4,
+  "passed_count": 0,
+  "failed_count": 4,
+  "skipped_count": 0,
+  "test_results": [
+    {
+      "test_case_id": "security_xss_0",
+      "test_name": "XSS Test 0",
+      "status": "failed",
+      "start_time": "2025-08-03T14:00:46.321920742-07:00",
+      "end_time": "2025-08-03T14:00:46.321939463-07:00",
+      "duration": 18721,
+      "validation_result": {
+        "status": "failed",
+        "score": 0,
+        "violations": [
+          {
+            "field": "warnings",
+            "expected": [
+              "Potentially malicious content sanitized"
+            ],
+            "actual": [],
+            "severity": "minor",
+            "message": "Missing expected warnings: [Potentially malicious content sanitized]"
+          }
+        ],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 1
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 110,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "security_xss_1",
+      "test_name": "XSS Test 1",
+      "status": "failed",
+      "start_time": "2025-08-03T14:00:46.321941903-07:00",
+      "end_time": "2025-08-03T14:00:46.321951623-07:00",
+      "duration": 9720,
+      "validation_result": {
+        "status": "failed",
+        "score": 0,
+        "violations": [
+          {
+            "field": "warnings",
+            "expected": [
+              "Potentially malicious content sanitized"
+            ],
+            "actual": [],
+            "severity": "minor",
+            "message": "Missing expected warnings: [Potentially malicious content sanitized]"
+          }
+        ],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 1
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 116,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "security_xss_2",
+      "test_name": "XSS Test 2",
+      "status": "failed",
+      "start_time": "2025-08-03T14:00:46.321952773-07:00",
+      "end_time": "2025-08-03T14:00:46.321961044-07:00",
+      "duration": 8281,
+      "validation_result": {
+        "status": "failed",
+        "score": 0,
+        "violations": [
+          {
+            "field": "warnings",
+            "expected": [
+              "Potentially malicious content sanitized"
+            ],
+            "actual": [],
+            "severity": "minor",
+            "message": "Missing expected warnings: [Potentially malicious content sanitized]"
+          }
+        ],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 1
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 98,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "security_xss_3",
+      "test_name": "XSS Test 3",
+      "status": "failed",
+      "start_time": "2025-08-03T14:00:46.321963294-07:00",
+      "end_time": "2025-08-03T14:00:46.321975594-07:00",
+      "duration": 12300,
+      "validation_result": {
+        "status": "failed",
+        "score": 0,
+        "violations": [
+          {
+            "field": "warnings",
+            "expected": [
+              "Potentially malicious content sanitized"
+            ],
+            "actual": [],
+            "severity": "minor",
+            "message": "Missing expected warnings: [Potentially malicious content sanitized]"
+          }
+        ],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 1
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 102,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    }
+  ]
+}

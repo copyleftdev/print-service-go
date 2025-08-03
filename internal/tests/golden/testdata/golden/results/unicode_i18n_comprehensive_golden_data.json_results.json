@@ -1,0 +1,268 @@
+{
+  "suite_name": "unicode_i18n_comprehensive",
+  "start_time": "2025-08-03T14:02:33.624284587-07:00",
+  "end_time": "2025-08-03T14:02:33.624545086-07:00",
+  "duration": 260499,
+  "total_count": 8,
+  "passed_count": 8,
+  "failed_count": 0,
+  "skipped_count": 0,
+  "test_results": [
+    {
+      "test_case_id": "unicode_i18n_0",
+      "test_name": "Arabic RTL Complex",
+      "status": "passed",
+      "start_time": "2025-08-03T14:02:33.624284977-07:00",
+      "end_time": "2025-08-03T14:02:33.624343809-07:00",
+      "duration": 58832,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [
+          {
+            "field": "page_count",
+            "value": 1,
+            "message": "Page count matches expected value (±1 tolerance)"
+          }
+        ],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 1,
+          "total_checks": 1
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 562,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "unicode_i18n_1",
+      "test_name": "Chinese Traditional Complex",
+      "status": "passed",
+      "start_time": "2025-08-03T14:02:33.624346269-07:00",
+      "end_time": "2025-08-03T14:02:33.624384071-07:00",
+      "duration": 37802,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [
+          {
+            "field": "page_count",
+            "value": 1,
+            "message": "Page count matches expected value (±1 tolerance)"
+          }
+        ],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 1,
+          "total_checks": 1
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 582,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "unicode_i18n_2",
+      "test_name": "Japanese Mixed Scripts",
+      "status": "passed",
+      "start_time": "2025-08-03T14:02:33.624388231-07:00",
+      "end_time": "2025-08-03T14:02:33.624413502-07:00",
+      "duration": 25271,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [
+          {
+            "field": "page_count",
+            "value": 1,
+            "message": "Page count matches expected value (±1 tolerance)"
+          }
+        ],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 1,
+          "total_checks": 1
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 576,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "unicode_i18n_3",
+      "test_name": "Hebrew RTL with Numbers",
+      "status": "passed",
+      "start_time": "2025-08-03T14:02:33.624414662-07:00",
+      "end_time": "2025-08-03T14:02:33.624433552-07:00",
+      "duration": 18890,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [
+          {
+            "field": "page_count",
+            "value": 1,
+            "message": "Page count matches expected value (±1 tolerance)"
+          }
+        ],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 1,
+          "total_checks": 1
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 408,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "unicode_i18n_4",
+      "test_name": "Russian Cyrillic",
+      "status": "passed",
+      "start_time": "2025-08-03T14:02:33.624434542-07:00",
+      "end_time": "2025-08-03T14:02:33.624452753-07:00",
+      "duration": 18231,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [
+          {
+            "field": "page_count",
+            "value": 1,
+            "message": "Page count matches expected value (±1 tolerance)"
+          }
+        ],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 1,
+          "total_checks": 1
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 626,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "unicode_i18n_5",
+      "test_name": "Hindi Devanagari",
+      "status": "passed",
+      "start_time": "2025-08-03T14:02:33.624453963-07:00",
+      "end_time": "2025-08-03T14:02:33.624487004-07:00",
+      "duration": 33041,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [
+          {
+            "field": "page_count",
+            "value": 1,
+            "message": "Page count matches expected value (±1 tolerance)"
+          }
+        ],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 1,
+          "total_checks": 1
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 682,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "unicode_i18n_6",
+      "test_name": "Thai Complex",
+      "status": "passed",
+      "start_time": "2025-08-03T14:02:33.624488264-07:00",
+      "end_time": "2025-08-03T14:02:33.624517965-07:00",
+      "duration": 29701,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [
+          {
+            "field": "page_count",
+            "value": 1,
+            "message": "Page count matches expected value (±1 tolerance)"
+          }
+        ],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 1,
+          "total_checks": 1
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 572,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "unicode_i18n_7",
+      "test_name": "Emoji and Unicode Symbols",
+      "status": "passed",
+      "start_time": "2025-08-03T14:02:33.624519375-07:00",
+      "end_time": "2025-08-03T14:02:33.624544136-07:00",
+      "duration": 24761,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [
+          {
+            "field": "page_count",
+            "value": 1,
+            "message": "Page count matches expected value (±1 tolerance)"
+          }
+        ],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 1,
+          "total_checks": 1
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 706,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    }
+  ]
+}

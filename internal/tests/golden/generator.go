@@ -43,19 +43,19 @@ type TestCase struct {
 
 // TestInput represents the input for a test case
 type TestInput struct {
-	Document domain.Document    `json:"document"`
+	Document domain.Document     `json:"document"`
 	Options  domain.PrintOptions `json:"options"`
 }
 
 // ExpectedOutput represents the expected output for a test case
 type ExpectedOutput struct {
-	Status      domain.JobStatus       `json:"status"`
-	PageCount   int                    `json:"page_count,omitempty"`
-	OutputSize  int64                  `json:"output_size,omitempty"`
-	RenderTime  time.Duration          `json:"render_time,omitempty"`
-	Warnings    []string               `json:"warnings,omitempty"`
-	Errors      []string               `json:"errors,omitempty"`
-	Metadata    map[string]interface{} `json:"metadata,omitempty"`
+	Status     domain.JobStatus       `json:"status"`
+	PageCount  int                    `json:"page_count,omitempty"`
+	OutputSize int64                  `json:"output_size,omitempty"`
+	RenderTime time.Duration          `json:"render_time,omitempty"`
+	Warnings   []string               `json:"warnings,omitempty"`
+	Errors     []string               `json:"errors,omitempty"`
+	Metadata   map[string]interface{} `json:"metadata,omitempty"`
 }
 
 // GenerateBasicVariants generates basic test variants for common use cases
@@ -70,10 +70,10 @@ func (g *TestDataGenerator) GenerateBasicVariants() TestSuite {
 
 	// HTML Document variants
 	suite.TestCases = append(suite.TestCases, g.createHTMLTestCases()...)
-	
+
 	// Markdown Document variants
 	suite.TestCases = append(suite.TestCases, g.createMarkdownTestCases()...)
-	
+
 	// Text Document variants
 	suite.TestCases = append(suite.TestCases, g.createTextTestCases()...)
 

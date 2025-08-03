@@ -7,6 +7,8 @@ import (
 	"strings"
 
 	"print-service/internal/core/domain"
+
+	"golang.org/x/net/html"
 )
 
 // Sanitizer handles HTML sanitization for security
@@ -27,9 +29,9 @@ func NewSanitizer() *Sanitizer {
 
 // Sanitize sanitizes HTML content according to security options
 func (s *Sanitizer) Sanitize(content string, options domain.SecurityOptions) (string, error) {
-	// Parse the HTML
-	parser := &Parser{}
-	domNode, err := parser.Parse(content, domain.SecurityOptions{SanitizeHTML: false})
+	// Use a simple HTML parser without validation for sanitization to avoid circular dependency
+	// We'll parse the HTML directly using golang.org/x/net/html
+	domNode, err := s.parseHTMLForSanitization(content)
 	if err != nil {
 		return "", fmt.Errorf("failed to parse HTML for sanitization: %w", err)
 	}
@@ -331,4 +333,82 @@ func (v *URLValidator) ValidateDomain(domain string, options domain.SecurityOpti
 	}
 
 	return nil
+}
+
+// parseHTMLForSanitization parses HTML for sanitization without validation to avoid circular dependency
+func (s *Sanitizer) parseHTMLForSanitization(content string) (*DOMNode, error) {
+	// Use golang.org/x/net/html to parse HTML directly without validation
+	doc, err := html.Parse(strings.NewReader(content))
+	if err != nil {
+		return nil, fmt.Errorf("failed to parse HTML: %w", err)
+	}
+
+	// Convert html.Node to our DOMNode structure with cycle detection
+	visited := make(map[*html.Node]bool)
+	return s.convertHTMLNodeToDOMNodeWithDepth(doc, visited, 0), nil
+}
+
+// convertHTMLNodeToDOMNode converts html.Node to our DOMNode structure
+func (s *Sanitizer) convertHTMLNodeToDOMNode(node *html.Node) *DOMNode {
+	visited := make(map[*html.Node]bool)
+	return s.convertHTMLNodeToDOMNodeWithDepth(node, visited, 0)
+}
+
+// convertHTMLNodeToDOMNodeWithDepth converts html.Node with cycle detection and depth limiting
+func (s *Sanitizer) convertHTMLNodeToDOMNodeWithDepth(node *html.Node, visited map[*html.Node]bool, depth int) *DOMNode {
+	if node == nil {
+		return nil
+	}
+
+	// Prevent infinite recursion with depth limit
+	const maxDepth = 1000
+	if depth > maxDepth {
+		return &DOMNode{
+			Type: TextNode,
+			Data: "[MAX_DEPTH_EXCEEDED]",
+			Attributes: make(map[string]string),
+		}
+	}
+
+	// Prevent cycles
+	if visited[node] {
+		return &DOMNode{
+			Type: TextNode,
+			Data: "[CIRCULAR_REFERENCE]",
+			Attributes: make(map[string]string),
+		}
+	}
+	visited[node] = true
+	defer func() { delete(visited, node) }()
+
+	domNode := &DOMNode{
+		Data:       node.Data,
+		Attributes: make(map[string]string),
+	}
+
+	// Convert node type
+	switch node.Type {
+	case html.TextNode:
+		domNode.Type = TextNode
+	case html.ElementNode:
+		domNode.Type = ElementNode
+		// Copy attributes
+		for _, attr := range node.Attr {
+			domNode.Attributes[attr.Key] = attr.Val
+		}
+	case html.DocumentNode:
+		domNode.Type = DocumentNode
+	default:
+		domNode.Type = TextNode // Default to text for unknown types
+	}
+
+	// Convert children with incremented depth
+	for child := node.FirstChild; child != nil; child = child.NextSibling {
+		childDOMNode := s.convertHTMLNodeToDOMNodeWithDepth(child, visited, depth+1)
+		if childDOMNode != nil {
+			domNode.Children = append(domNode.Children, childDOMNode)
+		}
+	}
+
+	return domNode
 }

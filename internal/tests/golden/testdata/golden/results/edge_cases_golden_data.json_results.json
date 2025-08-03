@@ -1,0 +1,124 @@
+{
+  "suite_name": "edge_cases",
+  "start_time": "2025-08-03T14:00:46.311447477-07:00",
+  "end_time": "2025-08-03T14:00:46.312587997-07:00",
+  "duration": 1140520,
+  "total_count": 3,
+  "passed_count": 0,
+  "failed_count": 3,
+  "skipped_count": 0,
+  "test_results": [
+    {
+      "test_case_id": "edge_empty_content",
+      "test_name": "Empty Content",
+      "status": "failed",
+      "start_time": "2025-08-03T14:00:46.311447657-07:00",
+      "end_time": "2025-08-03T14:00:46.311463148-07:00",
+      "duration": 15491,
+      "validation_result": {
+        "status": "failed",
+        "score": 0.5,
+        "violations": [
+          {
+            "field": "warnings",
+            "expected": [
+              "Document content is empty"
+            ],
+            "actual": [],
+            "severity": "minor",
+            "message": "Missing expected warnings: [Document content is empty]"
+          }
+        ],
+        "matches": [
+          {
+            "field": "page_count",
+            "value": 1,
+            "message": "Page count matches expected value (±1 tolerance)"
+          }
+        ],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 1,
+          "total_checks": 2
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 0,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "edge_large_content",
+      "test_name": "Large Content Document",
+      "status": "failed",
+      "start_time": "2025-08-03T14:00:46.311470088-07:00",
+      "end_time": "2025-08-03T14:00:46.312567766-07:00",
+      "duration": 1097678,
+      "validation_result": {
+        "status": "failed",
+        "score": 0,
+        "violations": [
+          {
+            "field": "page_count",
+            "expected": 50,
+            "actual": 3,
+            "severity": "critical",
+            "message": "Page count differs by 47 pages (tolerance: ±1)"
+          }
+        ],
+        "matches": [],
+        "details": {
+          "critical_violations": 1,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 1
+        }
+      },
+      "actual_output": {
+        "page_count": 3,
+        "output_size": 278000,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "edge_invalid_html",
+      "test_name": "Invalid HTML Content",
+      "status": "failed",
+      "start_time": "2025-08-03T14:00:46.312569496-07:00",
+      "end_time": "2025-08-03T14:00:46.312586487-07:00",
+      "duration": 16991,
+      "validation_result": {
+        "status": "failed",
+        "score": 0,
+        "violations": [
+          {
+            "field": "warnings",
+            "expected": [
+              "HTML validation warnings detected"
+            ],
+            "actual": [],
+            "severity": "minor",
+            "message": "Missing expected warnings: [HTML validation warnings detected]"
+          }
+        ],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 1
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 134,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    }
+  ]
+}

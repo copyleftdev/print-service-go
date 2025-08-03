@@ -1,0 +1,90 @@
+{
+  "suite_name": "performance_tests",
+  "start_time": "2025-08-03T14:00:46.323607211-07:00",
+  "end_time": "2025-08-03T14:00:46.325253728-07:00",
+  "duration": 1646507,
+  "total_count": 3,
+  "passed_count": 3,
+  "failed_count": 0,
+  "skipped_count": 0,
+  "test_results": [
+    {
+      "test_case_id": "perf_quality_draft",
+      "test_name": "Performance Test - Draft Quality",
+      "status": "passed",
+      "start_time": "2025-08-03T14:00:46.323607691-07:00",
+      "end_time": "2025-08-03T14:00:46.324129609-07:00",
+      "duration": 521918,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 3,
+        "output_size": 62868,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "perf_quality_normal",
+      "test_name": "Performance Test - Normal Quality",
+      "status": "passed",
+      "start_time": "2025-08-03T14:00:46.324130349-07:00",
+      "end_time": "2025-08-03T14:00:46.324661008-07:00",
+      "duration": 530659,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 3,
+        "output_size": 62868,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "perf_quality_high",
+      "test_name": "Performance Test - High Quality",
+      "status": "passed",
+      "start_time": "2025-08-03T14:00:46.324661988-07:00",
+      "end_time": "2025-08-03T14:00:46.325253178-07:00",
+      "duration": 591190,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 3,
+        "output_size": 62868,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    }
+  ]
+}

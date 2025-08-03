@@ -85,8 +85,17 @@ temp/
 .dockerignore
 
 # Local configuration overrides
-configs/local.yaml
-configs/local.yml
+configs/*.yaml
+!configs/example.yaml
+!configs/development.yaml
+!configs/production.yaml
+
+# Large test data files (generated at runtime)
+testdata/golden/ultra_rigor_golden_data.json/
+testdata/golden/true_rigor_golden_data.json/
+testdata/golden/rigor_golden_data.json/
+# Keep smaller test files for basic functionality
+!testdata/golden/*_golden_data.json
 
 # Generated documentation
 docs/generated/
