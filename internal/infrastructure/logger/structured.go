@@ -18,7 +18,13 @@ type StructuredLogger struct {
 func NewStructuredLogger(cfg *config.LoggerConfig) Logger {
 	// Configure log level
 	level := ParseLogLevel(cfg.Level)
-	zapLevel := zapcore.Level(int8(level))
+	// Safe conversion to avoid integer overflow
+	var zapLevel zapcore.Level
+	if level >= -128 && level <= 127 {
+		zapLevel = zapcore.Level(level)
+	} else {
+		zapLevel = zapcore.InfoLevel // Default to info level if out of range
+	}
 
 	// Configure encoder
 	var encoderConfig zapcore.EncoderConfig
