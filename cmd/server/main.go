@@ -24,7 +24,7 @@ func main() {
 
 	// Initialize logger
 	log := logger.NewStructuredLogger(&cfg.Logger)
-	defer log.Sync()
+	defer func() { _ = log.Sync() }()
 
 	// Create HTTP server
 	server := api.NewServer(cfg, log)
