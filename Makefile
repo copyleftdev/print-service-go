@@ -175,6 +175,35 @@ benchmark: ## Run benchmarks
 	@go test -v -bench=. -benchmem ./...
 
 # =============================================================================
+# GOLDEN TEST DATA TARGETS
+# =============================================================================
+
+.PHONY: generate-golden-data
+generate-golden-data: ## Generate golden test data variants
+	@echo "Generating golden test data..."
+	@go run cmd/testgen/main.go -output=./testdata/golden -verbose
+
+.PHONY: generate-golden-basic
+generate-golden-basic: ## Generate basic golden test variants
+	@echo "Generating basic golden test data..."
+	@go run cmd/testgen/main.go -variants=basic -output=./testdata/golden -verbose
+
+.PHONY: generate-golden-edge
+generate-golden-edge: ## Generate edge case golden test variants
+	@echo "Generating edge case golden test data..."
+	@go run cmd/testgen/main.go -variants=edge -output=./testdata/golden -verbose
+
+.PHONY: generate-golden-stress
+generate-golden-stress: ## Generate stress test golden variants
+	@echo "Generating stress test golden data..."
+	@go run cmd/testgen/main.go -variants=stress -output=./testdata/golden -verbose
+
+.PHONY: test-golden
+test-golden: generate-golden-data ## Generate and run golden tests
+	@echo "Running golden tests..."
+	@go test -v -tags=golden ./internal/tests/golden/...
+
+# =============================================================================
 # CODE QUALITY TARGETS
 # =============================================================================
 
