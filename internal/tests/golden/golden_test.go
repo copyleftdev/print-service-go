@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"os"
 	"path/filepath"
+	"strings"
 	"testing"
 	"time"
 
@@ -291,22 +292,44 @@ func TestGoldenDataIntegrity(t *testing.T) {
 				return nil
 			}
 
-			var suite TestSuite
-			if err := json.Unmarshal(data, &suite); err != nil {
-				t.Errorf("Invalid JSON in %s: %v", path, err)
-				return nil
-			}
+			// Check if this is a test result file or a test suite file
+			if strings.Contains(path, "_results.json") {
+				// This is a test result file - validate as TestSuiteResult
+				var result TestSuiteResult
+				if err := json.Unmarshal(data, &result); err != nil {
+					t.Errorf("Invalid test result JSON in %s: %v", path, err)
+					return nil
+				}
 
-			// Basic validation
-			if suite.Name == "" {
-				t.Errorf("Test suite in %s has empty name", path)
-			}
+				// Basic validation for test results
+				if result.SuiteName == "" {
+					t.Errorf("Test suite result in %s has empty suite name", path)
+				}
 
-			if len(suite.TestCases) == 0 {
-				t.Errorf("Test suite in %s has no test cases", path)
-			}
+				if len(result.TestResults) == 0 {
+					t.Errorf("Test suite result in %s has no test results", path)
+				}
 
-			t.Logf("✓ %s: %d test cases", path, len(suite.TestCases))
+				t.Logf("✓ %s: %d test results (suite: %s)", path, len(result.TestResults), result.SuiteName)
+			} else {
+				// This is a test suite file - validate as TestSuite
+				var suite TestSuite
+				if err := json.Unmarshal(data, &suite); err != nil {
+					t.Errorf("Invalid test suite JSON in %s: %v", path, err)
+					return nil
+				}
+
+				// Basic validation for test suites
+				if suite.Name == "" {
+					t.Errorf("Test suite in %s has empty name", path)
+				}
+
+				if len(suite.TestCases) == 0 {
+					t.Errorf("Test suite in %s has no test cases", path)
+				}
+
+				t.Logf("✓ %s: %d test cases (suite: %s)", path, len(suite.TestCases), suite.Name)
+			}
 		}
 
 		return nil
