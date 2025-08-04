@@ -49,7 +49,7 @@ jobs:
     - name: Run tests (excluding ultra rigor)
       run: |
         # Run all tests except ultra rigor to avoid CI timeouts and large file issues
-        go test -v -race -timeout=300s -coverprofile=coverage.out $(go list ./... | grep -v 'ultra_rigor')
+        go test -v -race -timeout=300s -coverprofile=coverage.out -skip="TestGoldenUltraRigor|TestGoldenTrueRigor" ./...
         
     - name: Run basic golden tests
       run: |
