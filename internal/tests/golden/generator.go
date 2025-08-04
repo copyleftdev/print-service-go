@@ -6,6 +6,9 @@ import (
 	"strings"
 	"time"
 
+	"golang.org/x/text/cases"
+	"golang.org/x/text/language"
+
 	"print-service/internal/core/domain"
 )
 
@@ -275,7 +278,7 @@ func (g *TestDataGenerator) GeneratePerformanceTestVariants() TestSuite {
 	for i, quality := range qualities {
 		suite.TestCases = append(suite.TestCases, TestCase{
 			ID:          fmt.Sprintf("perf_quality_%s", string(quality)),
-			Name:        fmt.Sprintf("Performance Test - %s Quality", strings.Title(string(quality))),
+			Name:        fmt.Sprintf("Performance Test - %s Quality", cases.Title(language.English).String(string(quality))),
 			Description: fmt.Sprintf("Performance test with %s quality rendering", quality),
 			Tags:        []string{"performance", "quality", string(quality)},
 			Input: TestInput{

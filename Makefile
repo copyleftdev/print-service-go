@@ -219,11 +219,14 @@ test-golden: generate-golden-data ## Generate and run golden tests
 
 .PHONY: lint
 lint: ## Run linters
-	@echo "Running linters..."
-	@which golangci-lint > /dev/null || (echo "Installing golangci-lint..." && \
-		curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | \
-		sh -s -- -b $(shell go env GOPATH)/bin $(GOLANGCI_LINT_VERSION))
-	@golangci-lint run
+	@echo "Running go vet..."
+	@go vet ./...
+	@echo "Running staticcheck..."
+	@staticcheck ./...
+	@echo "Running ineffassign..."
+	@ineffassign ./...
+	@echo "Checking gofmt..."
+	@test -z "$$(gofmt -l .)" || (echo "Code not formatted. Run 'make fmt' to fix." && exit 1)
 
 .PHONY: fmt
 fmt: ## Format code

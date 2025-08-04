@@ -8,6 +8,7 @@ require (
 	github.com/jung-kurt/gofpdf v1.16.2
 	go.uber.org/zap v1.27.0
 	golang.org/x/net v0.42.0
+	golang.org/x/text v0.27.0
 	gopkg.in/yaml.v3 v3.0.1
 )
 
@@ -36,6 +37,5 @@ require (
 	golang.org/x/crypto v0.40.0 // indirect
 	golang.org/x/image v0.0.0-20190910094157-69e4b8554b2a // indirect
 	golang.org/x/sys v0.34.0 // indirect
-	golang.org/x/text v0.27.0 // indirect
 	google.golang.org/protobuf v1.34.1 // indirect
 )

@@ -22,6 +22,11 @@ build/
 bin/
 dist/
 
+# Application binaries
+testgen
+server
+print-service
+
 # IDE files
 .vscode/
 .idea/

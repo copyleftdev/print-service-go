@@ -68,11 +68,19 @@ jobs:
         name: codecov-umbrella
         fail_ci_if_error: false
 
-    - name: Run golangci-lint
-      uses: golangci/golangci-lint-action@v4
-      with:
-        version: latest
-        args: --timeout=5m
+    - name: Install linting tools
+      run: |
+        go install honnef.co/go/tools/cmd/staticcheck@latest
+        go install github.com/gordonklaus/ineffassign@latest
+
+    - name: Run linters
+      run: |
+        echo "Running staticcheck..."
+        staticcheck ./...
+        echo "Running ineffassign..."
+        ineffassign ./...
+        echo "Checking gofmt..."
+        test -z "$(gofmt -l .)" || (echo "Code not formatted. Run 'make fmt' to fix." && exit 1)
 
   # Security Scanning
   security:
