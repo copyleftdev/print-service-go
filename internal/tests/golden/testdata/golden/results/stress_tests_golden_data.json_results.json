@@ -1,8 +1,8 @@
 {
   "suite_name": "stress_tests",
-  "start_time": "2025-08-03T14:00:46.318623317-07:00",
-  "end_time": "2025-08-03T14:00:46.320846345-07:00",
-  "duration": 2223018,
+  "start_time": "2025-08-03T17:22:28.895821458-07:00",
+  "end_time": "2025-08-03T17:22:28.898137063-07:00",
+  "duration": 2315605,
   "total_count": 100,
   "passed_count": 100,
   "failed_count": 0,
@@ -12,9 +12,9 @@
       "test_case_id": "stress_concurrent_0",
       "test_name": "Concurrent Job 0",
       "status": "passed",
-      "start_time": "2025-08-03T14:00:46.318631748-07:00",
-      "end_time": "2025-08-03T14:00:46.31869385-07:00",
-      "duration": 62102,
+      "start_time": "2025-08-03T17:22:28.895836128-07:00",
+      "end_time": "2025-08-03T17:22:28.895919491-07:00",
+      "duration": 83363,
       "validation_result": {
         "status": "passed",
         "score": 1,
@@ -29,7 +29,7 @@
       },
       "actual_output": {
         "page_count": 1,
-        "output_size": 838,
+        "output_size": 430,
         "render_time": 50000000,
         "cache_hit": false
       }
@@ -38,9 +38,9 @@
       "test_case_id": "stress_concurrent_1",
       "test_name": "Concurrent Job 1",
       "status": "passed",
-      "start_time": "2025-08-03T14:00:46.31869542-07:00",
-      "end_time": "2025-08-03T14:00:46.318725441-07:00",
-      "duration": 30021,
+      "start_time": "2025-08-03T17:22:28.895920761-07:00",
+      "end_time": "2025-08-03T17:22:28.895952151-07:00",
+      "duration": 31390,
       "validation_result": {
         "status": "passed",
         "score": 1,
@@ -55,7 +55,7 @@
       },
       "actual_output": {
         "page_count": 1,
-        "output_size": 736,
+        "output_size": 730,
         "render_time": 50000000,
         "cache_hit": false
       }
@@ -64,9 +64,9 @@
       "test_case_id": "stress_concurrent_2",
       "test_name": "Concurrent Job 2",
       "status": "passed",
-      "start_time": "2025-08-03T14:00:46.318726161-07:00",
-      "end_time": "2025-08-03T14:00:46.318741491-07:00",
-      "duration": 15330,
+      "start_time": "2025-08-03T17:22:28.895952941-07:00",
+      "end_time": "2025-08-03T17:22:28.895990453-07:00",
+      "duration": 37512,
       "validation_result": {
         "status": "passed",
         "score": 1,
@@ -81,7 +81,7 @@
       },
       "actual_output": {
         "page_count": 1,
-        "output_size": 624,
+        "output_size": 862,
         "render_time": 50000000,
         "cache_hit": false
       }
@@ -90,9 +90,9 @@
       "test_case_id": "stress_concurrent_3",
       "test_name": "Concurrent Job 3",
       "status": "passed",
-      "start_time": "2025-08-03T14:00:46.318742142-07:00",
-      "end_time": "2025-08-03T14:00:46.318764182-07:00",
-      "duration": 22040,
+      "start_time": "2025-08-03T17:22:28.895991063-07:00",
+      "end_time": "2025-08-03T17:22:28.896016323-07:00",
+      "duration": 25260,
       "validation_result": {
         "status": "passed",
         "score": 1,
@@ -107,7 +107,7 @@
       },
       "actual_output": {
         "page_count": 1,
-        "output_size": 652,
+        "output_size": 618,
         "render_time": 50000000,
         "cache_hit": false
       }
@@ -116,737 +116,9 @@
       "test_case_id": "stress_concurrent_4",
       "test_name": "Concurrent Job 4",
       "status": "passed",
-      "start_time": "2025-08-03T14:00:46.318764762-07:00",
-      "end_time": "2025-08-03T14:00:46.318791393-07:00",
-      "duration": 26631,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 658,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_5",
-      "test_name": "Concurrent Job 5",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.318797123-07:00",
-      "end_time": "2025-08-03T14:00:46.318813734-07:00",
-      "duration": 16611,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 678,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_6",
-      "test_name": "Concurrent Job 6",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.318814384-07:00",
-      "end_time": "2025-08-03T14:00:46.318836385-07:00",
-      "duration": 22001,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 554,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_7",
-      "test_name": "Concurrent Job 7",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.318837075-07:00",
-      "end_time": "2025-08-03T14:00:46.318860676-07:00",
-      "duration": 23611,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 1202,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_8",
-      "test_name": "Concurrent Job 8",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.318861566-07:00",
-      "end_time": "2025-08-03T14:00:46.318876376-07:00",
-      "duration": 14810,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 776,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_9",
-      "test_name": "Concurrent Job 9",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.318876966-07:00",
-      "end_time": "2025-08-03T14:00:46.318920538-07:00",
-      "duration": 43572,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 980,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_10",
-      "test_name": "Concurrent Job 10",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.318921138-07:00",
-      "end_time": "2025-08-03T14:00:46.318935718-07:00",
-      "duration": 14580,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 454,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_11",
-      "test_name": "Concurrent Job 11",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.318936308-07:00",
-      "end_time": "2025-08-03T14:00:46.318957849-07:00",
-      "duration": 21541,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 414,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_12",
-      "test_name": "Concurrent Job 12",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.318958459-07:00",
-      "end_time": "2025-08-03T14:00:46.31897674-07:00",
-      "duration": 18281,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 916,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_13",
-      "test_name": "Concurrent Job 13",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.31897735-07:00",
-      "end_time": "2025-08-03T14:00:46.31899903-07:00",
-      "duration": 21680,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 886,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_14",
-      "test_name": "Concurrent Job 14",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.3189995-07:00",
-      "end_time": "2025-08-03T14:00:46.319013791-07:00",
-      "duration": 14291,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 574,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_15",
-      "test_name": "Concurrent Job 15",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.319014241-07:00",
-      "end_time": "2025-08-03T14:00:46.319035112-07:00",
-      "duration": 20871,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 626,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_16",
-      "test_name": "Concurrent Job 16",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.319035572-07:00",
-      "end_time": "2025-08-03T14:00:46.319052912-07:00",
-      "duration": 17340,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 720,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_17",
-      "test_name": "Concurrent Job 17",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.319057232-07:00",
-      "end_time": "2025-08-03T14:00:46.319080973-07:00",
-      "duration": 23741,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 498,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_18",
-      "test_name": "Concurrent Job 18",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.319081523-07:00",
-      "end_time": "2025-08-03T14:00:46.319097614-07:00",
-      "duration": 16091,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 918,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_19",
-      "test_name": "Concurrent Job 19",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.319098174-07:00",
-      "end_time": "2025-08-03T14:00:46.319126695-07:00",
-      "duration": 28521,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 1166,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_20",
-      "test_name": "Concurrent Job 20",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.319127295-07:00",
-      "end_time": "2025-08-03T14:00:46.319141275-07:00",
-      "duration": 13980,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 734,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_21",
-      "test_name": "Concurrent Job 21",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.319141605-07:00",
-      "end_time": "2025-08-03T14:00:46.319160866-07:00",
-      "duration": 19261,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 738,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_22",
-      "test_name": "Concurrent Job 22",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.319161316-07:00",
-      "end_time": "2025-08-03T14:00:46.319176617-07:00",
-      "duration": 15301,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 426,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_23",
-      "test_name": "Concurrent Job 23",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.319177067-07:00",
-      "end_time": "2025-08-03T14:00:46.319198407-07:00",
-      "duration": 21340,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 690,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_24",
-      "test_name": "Concurrent Job 24",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.319198857-07:00",
-      "end_time": "2025-08-03T14:00:46.319214168-07:00",
-      "duration": 15311,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 440,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_25",
-      "test_name": "Concurrent Job 25",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.319220658-07:00",
-      "end_time": "2025-08-03T14:00:46.319233799-07:00",
-      "duration": 13141,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 738,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_26",
-      "test_name": "Concurrent Job 26",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.319234319-07:00",
-      "end_time": "2025-08-03T14:00:46.319253599-07:00",
-      "duration": 19280,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 810,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_27",
-      "test_name": "Concurrent Job 27",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.319254089-07:00",
-      "end_time": "2025-08-03T14:00:46.31927375-07:00",
-      "duration": 19661,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 736,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_28",
-      "test_name": "Concurrent Job 28",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.31927409-07:00",
-      "end_time": "2025-08-03T14:00:46.319307071-07:00",
-      "duration": 32981,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 686,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_29",
-      "test_name": "Concurrent Job 29",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.319307591-07:00",
-      "end_time": "2025-08-03T14:00:46.319329252-07:00",
-      "duration": 21661,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 728,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_30",
-      "test_name": "Concurrent Job 30",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.319329732-07:00",
-      "end_time": "2025-08-03T14:00:46.319349103-07:00",
-      "duration": 19371,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 566,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_31",
-      "test_name": "Concurrent Job 31",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.319349473-07:00",
-      "end_time": "2025-08-03T14:00:46.319377324-07:00",
-      "duration": 27851,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 408,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_32",
-      "test_name": "Concurrent Job 32",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.319377844-07:00",
-      "end_time": "2025-08-03T14:00:46.319395004-07:00",
-      "duration": 17160,
+      "start_time": "2025-08-03T17:22:28.896016883-07:00",
+      "end_time": "2025-08-03T17:22:28.896037744-07:00",
+      "duration": 20861,
       "validation_result": {
         "status": "passed",
         "score": 1,
@@ -867,12 +139,12 @@
       }
     },
     {
-      "test_case_id": "stress_concurrent_33",
-      "test_name": "Concurrent Job 33",
+      "test_case_id": "stress_concurrent_5",
+      "test_name": "Concurrent Job 5",
       "status": "passed",
-      "start_time": "2025-08-03T14:00:46.319395534-07:00",
-      "end_time": "2025-08-03T14:00:46.319447426-07:00",
-      "duration": 51892,
+      "start_time": "2025-08-03T17:22:28.896055904-07:00",
+      "end_time": "2025-08-03T17:22:28.896086625-07:00",
+      "duration": 30721,
       "validation_result": {
         "status": "passed",
         "score": 1,
@@ -887,694 +159,18 @@
       },
       "actual_output": {
         "page_count": 1,
-        "output_size": 378,
+        "output_size": 652,
         "render_time": 50000000,
         "cache_hit": false
       }
     },
     {
-      "test_case_id": "stress_concurrent_34",
-      "test_name": "Concurrent Job 34",
+      "test_case_id": "stress_concurrent_6",
+      "test_name": "Concurrent Job 6",
       "status": "passed",
-      "start_time": "2025-08-03T14:00:46.319448886-07:00",
-      "end_time": "2025-08-03T14:00:46.319495868-07:00",
-      "duration": 46982,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 1116,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_35",
-      "test_name": "Concurrent Job 35",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.319496718-07:00",
-      "end_time": "2025-08-03T14:00:46.319634513-07:00",
-      "duration": 137795,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 476,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_36",
-      "test_name": "Concurrent Job 36",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.319635743-07:00",
-      "end_time": "2025-08-03T14:00:46.319665924-07:00",
-      "duration": 30171,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 600,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_37",
-      "test_name": "Concurrent Job 37",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.319666554-07:00",
-      "end_time": "2025-08-03T14:00:46.319691085-07:00",
-      "duration": 24531,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 714,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_38",
-      "test_name": "Concurrent Job 38",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.319691665-07:00",
-      "end_time": "2025-08-03T14:00:46.319712545-07:00",
-      "duration": 20890,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 646,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_39",
-      "test_name": "Concurrent Job 39",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.319713185-07:00",
-      "end_time": "2025-08-03T14:00:46.319737396-07:00",
-      "duration": 24201,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 740,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_40",
-      "test_name": "Concurrent Job 40",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.319737946-07:00",
-      "end_time": "2025-08-03T14:00:46.319759757-07:00",
-      "duration": 21811,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 728,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_41",
-      "test_name": "Concurrent Job 41",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.319760177-07:00",
-      "end_time": "2025-08-03T14:00:46.319784048-07:00",
-      "duration": 23861,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 458,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_42",
-      "test_name": "Concurrent Job 42",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.319784628-07:00",
-      "end_time": "2025-08-03T14:00:46.319816429-07:00",
-      "duration": 31801,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 1072,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_43",
-      "test_name": "Concurrent Job 43",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.319817009-07:00",
-      "end_time": "2025-08-03T14:00:46.3198413-07:00",
-      "duration": 24291,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 512,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_44",
-      "test_name": "Concurrent Job 44",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.31984188-07:00",
-      "end_time": "2025-08-03T14:00:46.31985892-07:00",
-      "duration": 17030,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 700,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_45",
-      "test_name": "Concurrent Job 45",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.31985931-07:00",
-      "end_time": "2025-08-03T14:00:46.319879231-07:00",
-      "duration": 19911,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 526,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_46",
-      "test_name": "Concurrent Job 46",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.319879781-07:00",
-      "end_time": "2025-08-03T14:00:46.319916252-07:00",
-      "duration": 36481,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 1258,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_47",
-      "test_name": "Concurrent Job 47",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.319916802-07:00",
-      "end_time": "2025-08-03T14:00:46.319933043-07:00",
-      "duration": 16231,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 612,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_48",
-      "test_name": "Concurrent Job 48",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.319933623-07:00",
-      "end_time": "2025-08-03T14:00:46.319945833-07:00",
-      "duration": 12210,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 486,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_49",
-      "test_name": "Concurrent Job 49",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.319946663-07:00",
-      "end_time": "2025-08-03T14:00:46.319961674-07:00",
-      "duration": 15001,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 552,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_50",
-      "test_name": "Concurrent Job 50",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.319962344-07:00",
-      "end_time": "2025-08-03T14:00:46.319972804-07:00",
-      "duration": 10460,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 366,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_51",
-      "test_name": "Concurrent Job 51",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.319973334-07:00",
-      "end_time": "2025-08-03T14:00:46.319984725-07:00",
-      "duration": 11391,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 422,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_52",
-      "test_name": "Concurrent Job 52",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.319985225-07:00",
-      "end_time": "2025-08-03T14:00:46.320035957-07:00",
-      "duration": 50732,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 896,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_53",
-      "test_name": "Concurrent Job 53",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.320038217-07:00",
-      "end_time": "2025-08-03T14:00:46.320058867-07:00",
-      "duration": 20640,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 922,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_54",
-      "test_name": "Concurrent Job 54",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.320059437-07:00",
-      "end_time": "2025-08-03T14:00:46.320076978-07:00",
-      "duration": 17551,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 884,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_55",
-      "test_name": "Concurrent Job 55",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.320077508-07:00",
-      "end_time": "2025-08-03T14:00:46.320092399-07:00",
-      "duration": 14891,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 454,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_56",
-      "test_name": "Concurrent Job 56",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.320092969-07:00",
-      "end_time": "2025-08-03T14:00:46.320105349-07:00",
-      "duration": 12380,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 462,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_57",
-      "test_name": "Concurrent Job 57",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.320105829-07:00",
-      "end_time": "2025-08-03T14:00:46.32012514-07:00",
-      "duration": 19311,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 456,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_58",
-      "test_name": "Concurrent Job 58",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.32012555-07:00",
-      "end_time": "2025-08-03T14:00:46.32014637-07:00",
-      "duration": 20820,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 464,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_59",
-      "test_name": "Concurrent Job 59",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.32014692-07:00",
-      "end_time": "2025-08-03T14:00:46.320160561-07:00",
-      "duration": 13631,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 546,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_60",
-      "test_name": "Concurrent Job 60",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.320161101-07:00",
-      "end_time": "2025-08-03T14:00:46.320174091-07:00",
-      "duration": 12990,
+      "start_time": "2025-08-03T17:22:28.896087235-07:00",
+      "end_time": "2025-08-03T17:22:28.896102756-07:00",
+      "duration": 15521,
       "validation_result": {
         "status": "passed",
         "score": 1,
@@ -1595,38 +191,12 @@
       }
     },
     {
-      "test_case_id": "stress_concurrent_61",
-      "test_name": "Concurrent Job 61",
+      "test_case_id": "stress_concurrent_7",
+      "test_name": "Concurrent Job 7",
       "status": "passed",
-      "start_time": "2025-08-03T14:00:46.320174571-07:00",
-      "end_time": "2025-08-03T14:00:46.320189392-07:00",
-      "duration": 14821,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 702,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_62",
-      "test_name": "Concurrent Job 62",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.320189942-07:00",
-      "end_time": "2025-08-03T14:00:46.320203902-07:00",
-      "duration": 13960,
+      "start_time": "2025-08-03T17:22:28.896103446-07:00",
+      "end_time": "2025-08-03T17:22:28.896122156-07:00",
+      "duration": 18710,
       "validation_result": {
         "status": "passed",
         "score": 1,
@@ -1647,12 +217,12 @@
       }
     },
     {
-      "test_case_id": "stress_concurrent_63",
-      "test_name": "Concurrent Job 63",
+      "test_case_id": "stress_concurrent_8",
+      "test_name": "Concurrent Job 8",
       "status": "passed",
-      "start_time": "2025-08-03T14:00:46.320204442-07:00",
-      "end_time": "2025-08-03T14:00:46.320217683-07:00",
-      "duration": 13251,
+      "start_time": "2025-08-03T17:22:28.896122726-07:00",
+      "end_time": "2025-08-03T17:22:28.896144107-07:00",
+      "duration": 21381,
       "validation_result": {
         "status": "passed",
         "score": 1,
@@ -1667,18 +237,18 @@
       },
       "actual_output": {
         "page_count": 1,
-        "output_size": 650,
+        "output_size": 836,
         "render_time": 50000000,
         "cache_hit": false
       }
     },
     {
-      "test_case_id": "stress_concurrent_64",
-      "test_name": "Concurrent Job 64",
+      "test_case_id": "stress_concurrent_9",
+      "test_name": "Concurrent Job 9",
       "status": "passed",
-      "start_time": "2025-08-03T14:00:46.320218053-07:00",
-      "end_time": "2025-08-03T14:00:46.320240804-07:00",
-      "duration": 22751,
+      "start_time": "2025-08-03T17:22:28.896144727-07:00",
+      "end_time": "2025-08-03T17:22:28.896168448-07:00",
+      "duration": 23721,
       "validation_result": {
         "status": "passed",
         "score": 1,
@@ -1693,18 +263,18 @@
       },
       "actual_output": {
         "page_count": 1,
-        "output_size": 678,
+        "output_size": 514,
         "render_time": 50000000,
         "cache_hit": false
       }
     },
     {
-      "test_case_id": "stress_concurrent_65",
-      "test_name": "Concurrent Job 65",
+      "test_case_id": "stress_concurrent_10",
+      "test_name": "Concurrent Job 10",
       "status": "passed",
-      "start_time": "2025-08-03T14:00:46.320241484-07:00",
-      "end_time": "2025-08-03T14:00:46.320258354-07:00",
-      "duration": 16870,
+      "start_time": "2025-08-03T17:22:28.896168898-07:00",
+      "end_time": "2025-08-03T17:22:28.896206399-07:00",
+      "duration": 37501,
       "validation_result": {
         "status": "passed",
         "score": 1,
@@ -1719,18 +289,18 @@
       },
       "actual_output": {
         "page_count": 1,
-        "output_size": 930,
+        "output_size": 558,
         "render_time": 50000000,
         "cache_hit": false
       }
     },
     {
-      "test_case_id": "stress_concurrent_66",
-      "test_name": "Concurrent Job 66",
+      "test_case_id": "stress_concurrent_11",
+      "test_name": "Concurrent Job 11",
       "status": "passed",
-      "start_time": "2025-08-03T14:00:46.320258894-07:00",
-      "end_time": "2025-08-03T14:00:46.320278395-07:00",
-      "duration": 19511,
+      "start_time": "2025-08-03T17:22:28.896207019-07:00",
+      "end_time": "2025-08-03T17:22:28.896218959-07:00",
+      "duration": 11940,
       "validation_result": {
         "status": "passed",
         "score": 1,
@@ -1745,18 +315,18 @@
       },
       "actual_output": {
         "page_count": 1,
-        "output_size": 774,
+        "output_size": 364,
         "render_time": 50000000,
         "cache_hit": false
       }
     },
     {
-      "test_case_id": "stress_concurrent_67",
-      "test_name": "Concurrent Job 67",
+      "test_case_id": "stress_concurrent_12",
+      "test_name": "Concurrent Job 12",
       "status": "passed",
-      "start_time": "2025-08-03T14:00:46.320278925-07:00",
-      "end_time": "2025-08-03T14:00:46.320293305-07:00",
-      "duration": 14370,
+      "start_time": "2025-08-03T17:22:28.896219449-07:00",
+      "end_time": "2025-08-03T17:22:28.896235719-07:00",
+      "duration": 16270,
       "validation_result": {
         "status": "passed",
         "score": 1,
@@ -1771,18 +341,18 @@
       },
       "actual_output": {
         "page_count": 1,
-        "output_size": 564,
+        "output_size": 810,
         "render_time": 50000000,
         "cache_hit": false
       }
     },
     {
-      "test_case_id": "stress_concurrent_68",
-      "test_name": "Concurrent Job 68",
+      "test_case_id": "stress_concurrent_13",
+      "test_name": "Concurrent Job 13",
       "status": "passed",
-      "start_time": "2025-08-03T14:00:46.320293866-07:00",
-      "end_time": "2025-08-03T14:00:46.320305196-07:00",
-      "duration": 11330,
+      "start_time": "2025-08-03T17:22:28.896236289-07:00",
+      "end_time": "2025-08-03T17:22:28.89624896-07:00",
+      "duration": 12671,
       "validation_result": {
         "status": "passed",
         "score": 1,
@@ -1797,18 +367,18 @@
       },
       "actual_output": {
         "page_count": 1,
-        "output_size": 476,
+        "output_size": 530,
         "render_time": 50000000,
         "cache_hit": false
       }
     },
     {
-      "test_case_id": "stress_concurrent_69",
-      "test_name": "Concurrent Job 69",
+      "test_case_id": "stress_concurrent_14",
+      "test_name": "Concurrent Job 14",
       "status": "passed",
-      "start_time": "2025-08-03T14:00:46.320305706-07:00",
-      "end_time": "2025-08-03T14:00:46.320324737-07:00",
-      "duration": 19021,
+      "start_time": "2025-08-03T17:22:28.89624942-07:00",
+      "end_time": "2025-08-03T17:22:28.8962653-07:00",
+      "duration": 15880,
       "validation_result": {
         "status": "passed",
         "score": 1,
@@ -1823,18 +393,18 @@
       },
       "actual_output": {
         "page_count": 1,
-        "output_size": 1090,
+        "output_size": 636,
         "render_time": 50000000,
         "cache_hit": false
       }
     },
     {
-      "test_case_id": "stress_concurrent_70",
-      "test_name": "Concurrent Job 70",
+      "test_case_id": "stress_concurrent_15",
+      "test_name": "Concurrent Job 15",
       "status": "passed",
-      "start_time": "2025-08-03T14:00:46.320325247-07:00",
-      "end_time": "2025-08-03T14:00:46.320337267-07:00",
-      "duration": 12020,
+      "start_time": "2025-08-03T17:22:28.89626584-07:00",
+      "end_time": "2025-08-03T17:22:28.896278221-07:00",
+      "duration": 12381,
       "validation_result": {
         "status": "passed",
         "score": 1,
@@ -1849,18 +419,18 @@
       },
       "actual_output": {
         "page_count": 1,
-        "output_size": 576,
+        "output_size": 660,
         "render_time": 50000000,
         "cache_hit": false
       }
     },
     {
-      "test_case_id": "stress_concurrent_71",
-      "test_name": "Concurrent Job 71",
+      "test_case_id": "stress_concurrent_16",
+      "test_name": "Concurrent Job 16",
       "status": "passed",
-      "start_time": "2025-08-03T14:00:46.320337657-07:00",
-      "end_time": "2025-08-03T14:00:46.320355468-07:00",
-      "duration": 17811,
+      "start_time": "2025-08-03T17:22:28.896278661-07:00",
+      "end_time": "2025-08-03T17:22:28.896290911-07:00",
+      "duration": 12250,
       "validation_result": {
         "status": "passed",
         "score": 1,
@@ -1875,18 +445,18 @@
       },
       "actual_output": {
         "page_count": 1,
-        "output_size": 1010,
+        "output_size": 578,
         "render_time": 50000000,
         "cache_hit": false
       }
     },
     {
-      "test_case_id": "stress_concurrent_72",
-      "test_name": "Concurrent Job 72",
+      "test_case_id": "stress_concurrent_17",
+      "test_name": "Concurrent Job 17",
       "status": "passed",
-      "start_time": "2025-08-03T14:00:46.320355978-07:00",
-      "end_time": "2025-08-03T14:00:46.320366648-07:00",
-      "duration": 10660,
+      "start_time": "2025-08-03T17:22:28.896291841-07:00",
+      "end_time": "2025-08-03T17:22:28.896306421-07:00",
+      "duration": 14580,
       "validation_result": {
         "status": "passed",
         "score": 1,
@@ -1901,18 +471,18 @@
       },
       "actual_output": {
         "page_count": 1,
-        "output_size": 448,
+        "output_size": 910,
         "render_time": 50000000,
         "cache_hit": false
       }
     },
     {
-      "test_case_id": "stress_concurrent_73",
-      "test_name": "Concurrent Job 73",
+      "test_case_id": "stress_concurrent_18",
+      "test_name": "Concurrent Job 18",
       "status": "passed",
-      "start_time": "2025-08-03T14:00:46.320367018-07:00",
-      "end_time": "2025-08-03T14:00:46.320378738-07:00",
-      "duration": 11710,
+      "start_time": "2025-08-03T17:22:28.896306841-07:00",
+      "end_time": "2025-08-03T17:22:28.896324052-07:00",
+      "duration": 17211,
       "validation_result": {
         "status": "passed",
         "score": 1,
@@ -1927,18 +497,18 @@
       },
       "actual_output": {
         "page_count": 1,
-        "output_size": 648,
+        "output_size": 738,
         "render_time": 50000000,
         "cache_hit": false
       }
     },
     {
-      "test_case_id": "stress_concurrent_74",
-      "test_name": "Concurrent Job 74",
+      "test_case_id": "stress_concurrent_19",
+      "test_name": "Concurrent Job 19",
       "status": "passed",
-      "start_time": "2025-08-03T14:00:46.320379138-07:00",
-      "end_time": "2025-08-03T14:00:46.320392819-07:00",
-      "duration": 13681,
+      "start_time": "2025-08-03T17:22:28.896324762-07:00",
+      "end_time": "2025-08-03T17:22:28.896345672-07:00",
+      "duration": 20910,
       "validation_result": {
         "status": "passed",
         "score": 1,
@@ -1953,18 +523,18 @@
       },
       "actual_output": {
         "page_count": 1,
-        "output_size": 648,
+        "output_size": 740,
         "render_time": 50000000,
         "cache_hit": false
       }
     },
     {
-      "test_case_id": "stress_concurrent_75",
-      "test_name": "Concurrent Job 75",
+      "test_case_id": "stress_concurrent_20",
+      "test_name": "Concurrent Job 20",
       "status": "passed",
-      "start_time": "2025-08-03T14:00:46.320393229-07:00",
-      "end_time": "2025-08-03T14:00:46.320403499-07:00",
-      "duration": 10280,
+      "start_time": "2025-08-03T17:22:28.896346262-07:00",
+      "end_time": "2025-08-03T17:22:28.896365733-07:00",
+      "duration": 19471,
       "validation_result": {
         "status": "passed",
         "score": 1,
@@ -1979,408 +549,18 @@
       },
       "actual_output": {
         "page_count": 1,
-        "output_size": 440,
+        "output_size": 726,
         "render_time": 50000000,
         "cache_hit": false
       }
     },
     {
-      "test_case_id": "stress_concurrent_76",
-      "test_name": "Concurrent Job 76",
+      "test_case_id": "stress_concurrent_21",
+      "test_name": "Concurrent Job 21",
       "status": "passed",
-      "start_time": "2025-08-03T14:00:46.320404039-07:00",
-      "end_time": "2025-08-03T14:00:46.32042589-07:00",
-      "duration": 21851,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 882,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_77",
-      "test_name": "Concurrent Job 77",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.32042625-07:00",
-      "end_time": "2025-08-03T14:00:46.320439331-07:00",
-      "duration": 13081,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 846,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_78",
-      "test_name": "Concurrent Job 78",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.320439661-07:00",
-      "end_time": "2025-08-03T14:00:46.320451151-07:00",
-      "duration": 11490,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 482,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_79",
-      "test_name": "Concurrent Job 79",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.320451571-07:00",
-      "end_time": "2025-08-03T14:00:46.320463201-07:00",
-      "duration": 11630,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 714,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_80",
-      "test_name": "Concurrent Job 80",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.320463741-07:00",
-      "end_time": "2025-08-03T14:00:46.320477002-07:00",
-      "duration": 13261,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 816,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_81",
-      "test_name": "Concurrent Job 81",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.320486292-07:00",
-      "end_time": "2025-08-03T14:00:46.320539004-07:00",
-      "duration": 52712,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 1068,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_82",
-      "test_name": "Concurrent Job 82",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.320539874-07:00",
-      "end_time": "2025-08-03T14:00:46.320572865-07:00",
-      "duration": 32991,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 994,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_83",
-      "test_name": "Concurrent Job 83",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.320573405-07:00",
-      "end_time": "2025-08-03T14:00:46.320586576-07:00",
-      "duration": 13171,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 850,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_84",
-      "test_name": "Concurrent Job 84",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.320587066-07:00",
-      "end_time": "2025-08-03T14:00:46.320600196-07:00",
-      "duration": 13130,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 764,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_85",
-      "test_name": "Concurrent Job 85",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.320600526-07:00",
-      "end_time": "2025-08-03T14:00:46.320616357-07:00",
-      "duration": 15831,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 1056,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_86",
-      "test_name": "Concurrent Job 86",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.320616787-07:00",
-      "end_time": "2025-08-03T14:00:46.320629967-07:00",
-      "duration": 13180,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 462,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_87",
-      "test_name": "Concurrent Job 87",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.320630537-07:00",
-      "end_time": "2025-08-03T14:00:46.320644798-07:00",
-      "duration": 14261,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 968,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_88",
-      "test_name": "Concurrent Job 88",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.320645528-07:00",
-      "end_time": "2025-08-03T14:00:46.320680749-07:00",
-      "duration": 35221,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 1268,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_89",
-      "test_name": "Concurrent Job 89",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.320681289-07:00",
-      "end_time": "2025-08-03T14:00:46.320695369-07:00",
-      "duration": 14070,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 586,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_90",
-      "test_name": "Concurrent Job 90",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.32069581-07:00",
-      "end_time": "2025-08-03T14:00:46.32071448-07:00",
-      "duration": 18670,
-      "validation_result": {
-        "status": "passed",
-        "score": 1,
-        "violations": [],
-        "matches": [],
-        "details": {
-          "critical_violations": 0,
-          "major_violations": 0,
-          "passed_checks": 0,
-          "total_checks": 0
-        }
-      },
-      "actual_output": {
-        "page_count": 1,
-        "output_size": 1230,
-        "render_time": 50000000,
-        "cache_hit": false
-      }
-    },
-    {
-      "test_case_id": "stress_concurrent_91",
-      "test_name": "Concurrent Job 91",
-      "status": "passed",
-      "start_time": "2025-08-03T14:00:46.32071481-07:00",
-      "end_time": "2025-08-03T14:00:46.320728611-07:00",
-      "duration": 13801,
+      "start_time": "2025-08-03T17:22:28.896366253-07:00",
+      "end_time": "2025-08-03T17:22:28.896395834-07:00",
+      "duration": 29581,
       "validation_result": {
         "status": "passed",
         "score": 1,
@@ -2401,12 +581,12 @@
       }
     },
     {
-      "test_case_id": "stress_concurrent_92",
-      "test_name": "Concurrent Job 92",
+      "test_case_id": "stress_concurrent_22",
+      "test_name": "Concurrent Job 22",
       "status": "passed",
-      "start_time": "2025-08-03T14:00:46.320729141-07:00",
-      "end_time": "2025-08-03T14:00:46.320742791-07:00",
-      "duration": 13650,
+      "start_time": "2025-08-03T17:22:28.896396384-07:00",
+      "end_time": "2025-08-03T17:22:28.896415064-07:00",
+      "duration": 18680,
       "validation_result": {
         "status": "passed",
         "score": 1,
@@ -2421,18 +601,18 @@
       },
       "actual_output": {
         "page_count": 1,
-        "output_size": 678,
+        "output_size": 822,
         "render_time": 50000000,
         "cache_hit": false
       }
     },
     {
-      "test_case_id": "stress_concurrent_93",
-      "test_name": "Concurrent Job 93",
+      "test_case_id": "stress_concurrent_23",
+      "test_name": "Concurrent Job 23",
       "status": "passed",
-      "start_time": "2025-08-03T14:00:46.320743351-07:00",
-      "end_time": "2025-08-03T14:00:46.320763042-07:00",
-      "duration": 19691,
+      "start_time": "2025-08-03T17:22:28.896415634-07:00",
+      "end_time": "2025-08-03T17:22:28.896433885-07:00",
+      "duration": 18251,
       "validation_result": {
         "status": "passed",
         "score": 1,
@@ -2447,18 +627,460 @@
       },
       "actual_output": {
         "page_count": 1,
-        "output_size": 866,
+        "output_size": 674,
         "render_time": 50000000,
         "cache_hit": false
       }
     },
     {
-      "test_case_id": "stress_concurrent_94",
-      "test_name": "Concurrent Job 94",
+      "test_case_id": "stress_concurrent_24",
+      "test_name": "Concurrent Job 24",
       "status": "passed",
-      "start_time": "2025-08-03T14:00:46.320763382-07:00",
-      "end_time": "2025-08-03T14:00:46.320778452-07:00",
-      "duration": 15070,
+      "start_time": "2025-08-03T17:22:28.896434335-07:00",
+      "end_time": "2025-08-03T17:22:28.896462076-07:00",
+      "duration": 27741,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 774,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_25",
+      "test_name": "Concurrent Job 25",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.896472886-07:00",
+      "end_time": "2025-08-03T17:22:28.896497977-07:00",
+      "duration": 25091,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 680,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_26",
+      "test_name": "Concurrent Job 26",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.896498497-07:00",
+      "end_time": "2025-08-03T17:22:28.896510537-07:00",
+      "duration": 12040,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 506,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_27",
+      "test_name": "Concurrent Job 27",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.896510917-07:00",
+      "end_time": "2025-08-03T17:22:28.896533528-07:00",
+      "duration": 22611,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 660,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_28",
+      "test_name": "Concurrent Job 28",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.896533878-07:00",
+      "end_time": "2025-08-03T17:22:28.896549468-07:00",
+      "duration": 15590,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 654,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_29",
+      "test_name": "Concurrent Job 29",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.896549888-07:00",
+      "end_time": "2025-08-03T17:22:28.896569549-07:00",
+      "duration": 19661,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 768,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_30",
+      "test_name": "Concurrent Job 30",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.896569889-07:00",
+      "end_time": "2025-08-03T17:22:28.896588009-07:00",
+      "duration": 18120,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 842,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_31",
+      "test_name": "Concurrent Job 31",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.896588349-07:00",
+      "end_time": "2025-08-03T17:22:28.89660488-07:00",
+      "duration": 16531,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 478,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_32",
+      "test_name": "Concurrent Job 32",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.8966053-07:00",
+      "end_time": "2025-08-03T17:22:28.89662716-07:00",
+      "duration": 21860,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 368,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_33",
+      "test_name": "Concurrent Job 33",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.89662768-07:00",
+      "end_time": "2025-08-03T17:22:28.896662401-07:00",
+      "duration": 34721,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 1140,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_34",
+      "test_name": "Concurrent Job 34",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.896662951-07:00",
+      "end_time": "2025-08-03T17:22:28.896687512-07:00",
+      "duration": 24561,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 726,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_35",
+      "test_name": "Concurrent Job 35",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.896687932-07:00",
+      "end_time": "2025-08-03T17:22:28.896705313-07:00",
+      "duration": 17381,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 780,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_36",
+      "test_name": "Concurrent Job 36",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.896705793-07:00",
+      "end_time": "2025-08-03T17:22:28.896716763-07:00",
+      "duration": 10970,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 414,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_37",
+      "test_name": "Concurrent Job 37",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.896717103-07:00",
+      "end_time": "2025-08-03T17:22:28.896729803-07:00",
+      "duration": 12700,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 422,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_38",
+      "test_name": "Concurrent Job 38",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.896730223-07:00",
+      "end_time": "2025-08-03T17:22:28.896750154-07:00",
+      "duration": 19931,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 614,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_39",
+      "test_name": "Concurrent Job 39",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.896750984-07:00",
+      "end_time": "2025-08-03T17:22:28.896769494-07:00",
+      "duration": 18510,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 602,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_40",
+      "test_name": "Concurrent Job 40",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.896770024-07:00",
+      "end_time": "2025-08-03T17:22:28.896786385-07:00",
+      "duration": 16361,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 378,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_41",
+      "test_name": "Concurrent Job 41",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.896786925-07:00",
+      "end_time": "2025-08-03T17:22:28.896828206-07:00",
+      "duration": 41281,
       "validation_result": {
         "status": "passed",
         "score": 1,
@@ -2479,12 +1101,12 @@
       }
     },
     {
-      "test_case_id": "stress_concurrent_95",
-      "test_name": "Concurrent Job 95",
+      "test_case_id": "stress_concurrent_42",
+      "test_name": "Concurrent Job 42",
       "status": "passed",
-      "start_time": "2025-08-03T14:00:46.320778852-07:00",
-      "end_time": "2025-08-03T14:00:46.320790973-07:00",
-      "duration": 12121,
+      "start_time": "2025-08-03T17:22:28.896828826-07:00",
+      "end_time": "2025-08-03T17:22:28.896852317-07:00",
+      "duration": 23491,
       "validation_result": {
         "status": "passed",
         "score": 1,
@@ -2499,7 +1121,1385 @@
       },
       "actual_output": {
         "page_count": 1,
-        "output_size": 658,
+        "output_size": 420,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_43",
+      "test_name": "Concurrent Job 43",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.896853287-07:00",
+      "end_time": "2025-08-03T17:22:28.896876407-07:00",
+      "duration": 23120,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 970,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_44",
+      "test_name": "Concurrent Job 44",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.896877047-07:00",
+      "end_time": "2025-08-03T17:22:28.896892478-07:00",
+      "duration": 15431,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 512,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_45",
+      "test_name": "Concurrent Job 45",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.896893228-07:00",
+      "end_time": "2025-08-03T17:22:28.896916018-07:00",
+      "duration": 22790,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 892,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_46",
+      "test_name": "Concurrent Job 46",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.896916659-07:00",
+      "end_time": "2025-08-03T17:22:28.896937069-07:00",
+      "duration": 20410,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 802,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_47",
+      "test_name": "Concurrent Job 47",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.896937699-07:00",
+      "end_time": "2025-08-03T17:22:28.89695827-07:00",
+      "duration": 20571,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 528,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_48",
+      "test_name": "Concurrent Job 48",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.89695892-07:00",
+      "end_time": "2025-08-03T17:22:28.89698213-07:00",
+      "duration": 23210,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 478,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_49",
+      "test_name": "Concurrent Job 49",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.89698283-07:00",
+      "end_time": "2025-08-03T17:22:28.897015081-07:00",
+      "duration": 32251,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 1006,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_50",
+      "test_name": "Concurrent Job 50",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.897015821-07:00",
+      "end_time": "2025-08-03T17:22:28.897036762-07:00",
+      "duration": 20941,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 656,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_51",
+      "test_name": "Concurrent Job 51",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.897037392-07:00",
+      "end_time": "2025-08-03T17:22:28.897057162-07:00",
+      "duration": 19760,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 836,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_52",
+      "test_name": "Concurrent Job 52",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.897057692-07:00",
+      "end_time": "2025-08-03T17:22:28.897076503-07:00",
+      "duration": 18811,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 758,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_53",
+      "test_name": "Concurrent Job 53",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.897077813-07:00",
+      "end_time": "2025-08-03T17:22:28.897090923-07:00",
+      "duration": 13110,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 504,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_54",
+      "test_name": "Concurrent Job 54",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.897091473-07:00",
+      "end_time": "2025-08-03T17:22:28.897104714-07:00",
+      "duration": 13241,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 354,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_55",
+      "test_name": "Concurrent Job 55",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.897105444-07:00",
+      "end_time": "2025-08-03T17:22:28.897120564-07:00",
+      "duration": 15120,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 608,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_56",
+      "test_name": "Concurrent Job 56",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.897121514-07:00",
+      "end_time": "2025-08-03T17:22:28.897142515-07:00",
+      "duration": 21001,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 1006,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_57",
+      "test_name": "Concurrent Job 57",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.897143625-07:00",
+      "end_time": "2025-08-03T17:22:28.897167266-07:00",
+      "duration": 23641,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 1100,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_58",
+      "test_name": "Concurrent Job 58",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.897167856-07:00",
+      "end_time": "2025-08-03T17:22:28.897186796-07:00",
+      "duration": 18940,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 722,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_59",
+      "test_name": "Concurrent Job 59",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.897187536-07:00",
+      "end_time": "2025-08-03T17:22:28.897211377-07:00",
+      "duration": 23851,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 640,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_60",
+      "test_name": "Concurrent Job 60",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.897211997-07:00",
+      "end_time": "2025-08-03T17:22:28.897245998-07:00",
+      "duration": 33991,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 956,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_61",
+      "test_name": "Concurrent Job 61",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.897246558-07:00",
+      "end_time": "2025-08-03T17:22:28.897266128-07:00",
+      "duration": 19570,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 986,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_62",
+      "test_name": "Concurrent Job 62",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.897266688-07:00",
+      "end_time": "2025-08-03T17:22:28.897296849-07:00",
+      "duration": 30161,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 850,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_63",
+      "test_name": "Concurrent Job 63",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.897297579-07:00",
+      "end_time": "2025-08-03T17:22:28.89731318-07:00",
+      "duration": 15601,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 570,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_64",
+      "test_name": "Concurrent Job 64",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.89731392-07:00",
+      "end_time": "2025-08-03T17:22:28.89732964-07:00",
+      "duration": 15730,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 416,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_65",
+      "test_name": "Concurrent Job 65",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.89733029-07:00",
+      "end_time": "2025-08-03T17:22:28.897351471-07:00",
+      "duration": 21181,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 786,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_66",
+      "test_name": "Concurrent Job 66",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.897352121-07:00",
+      "end_time": "2025-08-03T17:22:28.897372821-07:00",
+      "duration": 20700,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 610,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_67",
+      "test_name": "Concurrent Job 67",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.897373431-07:00",
+      "end_time": "2025-08-03T17:22:28.897397672-07:00",
+      "duration": 24241,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 936,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_68",
+      "test_name": "Concurrent Job 68",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.897398292-07:00",
+      "end_time": "2025-08-03T17:22:28.897419393-07:00",
+      "duration": 21101,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 744,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_69",
+      "test_name": "Concurrent Job 69",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.897420023-07:00",
+      "end_time": "2025-08-03T17:22:28.897449434-07:00",
+      "duration": 29411,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 1016,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_70",
+      "test_name": "Concurrent Job 70",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.897450034-07:00",
+      "end_time": "2025-08-03T17:22:28.897471574-07:00",
+      "duration": 21540,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 738,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_71",
+      "test_name": "Concurrent Job 71",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.897472774-07:00",
+      "end_time": "2025-08-03T17:22:28.897507065-07:00",
+      "duration": 34291,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 786,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_72",
+      "test_name": "Concurrent Job 72",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.897507825-07:00",
+      "end_time": "2025-08-03T17:22:28.897553666-07:00",
+      "duration": 45841,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 512,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_73",
+      "test_name": "Concurrent Job 73",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.897554696-07:00",
+      "end_time": "2025-08-03T17:22:28.897581637-07:00",
+      "duration": 26941,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 894,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_74",
+      "test_name": "Concurrent Job 74",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.897582327-07:00",
+      "end_time": "2025-08-03T17:22:28.897611638-07:00",
+      "duration": 29311,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 1080,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_75",
+      "test_name": "Concurrent Job 75",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.897612328-07:00",
+      "end_time": "2025-08-03T17:22:28.897634889-07:00",
+      "duration": 22561,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 954,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_76",
+      "test_name": "Concurrent Job 76",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.897635409-07:00",
+      "end_time": "2025-08-03T17:22:28.89766459-07:00",
+      "duration": 29181,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 1020,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_77",
+      "test_name": "Concurrent Job 77",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.89766523-07:00",
+      "end_time": "2025-08-03T17:22:28.89768988-07:00",
+      "duration": 24650,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 838,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_78",
+      "test_name": "Concurrent Job 78",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.89769049-07:00",
+      "end_time": "2025-08-03T17:22:28.897710371-07:00",
+      "duration": 19881,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 836,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_79",
+      "test_name": "Concurrent Job 79",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.897710891-07:00",
+      "end_time": "2025-08-03T17:22:28.897726491-07:00",
+      "duration": 15600,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 572,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_80",
+      "test_name": "Concurrent Job 80",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.897727091-07:00",
+      "end_time": "2025-08-03T17:22:28.897742472-07:00",
+      "duration": 15381,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 776,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_81",
+      "test_name": "Concurrent Job 81",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.897743462-07:00",
+      "end_time": "2025-08-03T17:22:28.897759502-07:00",
+      "duration": 16040,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 642,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_82",
+      "test_name": "Concurrent Job 82",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.897759952-07:00",
+      "end_time": "2025-08-03T17:22:28.897778893-07:00",
+      "duration": 18941,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 940,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_83",
+      "test_name": "Concurrent Job 83",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.897779433-07:00",
+      "end_time": "2025-08-03T17:22:28.897817654-07:00",
+      "duration": 38221,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 864,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_84",
+      "test_name": "Concurrent Job 84",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.897818214-07:00",
+      "end_time": "2025-08-03T17:22:28.897836144-07:00",
+      "duration": 17930,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 802,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_85",
+      "test_name": "Concurrent Job 85",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.897836674-07:00",
+      "end_time": "2025-08-03T17:22:28.897851345-07:00",
+      "duration": 14671,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 562,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_86",
+      "test_name": "Concurrent Job 86",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.897851895-07:00",
+      "end_time": "2025-08-03T17:22:28.897872135-07:00",
+      "duration": 20240,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 1040,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_87",
+      "test_name": "Concurrent Job 87",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.897872755-07:00",
+      "end_time": "2025-08-03T17:22:28.897896866-07:00",
+      "duration": 24101,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 722,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_88",
+      "test_name": "Concurrent Job 88",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.897897426-07:00",
+      "end_time": "2025-08-03T17:22:28.897917907-07:00",
+      "duration": 20481,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 800,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_89",
+      "test_name": "Concurrent Job 89",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.897918567-07:00",
+      "end_time": "2025-08-03T17:22:28.897942467-07:00",
+      "duration": 23900,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 1328,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_90",
+      "test_name": "Concurrent Job 90",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.897943317-07:00",
+      "end_time": "2025-08-03T17:22:28.897955148-07:00",
+      "duration": 11831,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 460,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_91",
+      "test_name": "Concurrent Job 91",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.897955678-07:00",
+      "end_time": "2025-08-03T17:22:28.897968948-07:00",
+      "duration": 13270,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 646,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_92",
+      "test_name": "Concurrent Job 92",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.897969368-07:00",
+      "end_time": "2025-08-03T17:22:28.897983888-07:00",
+      "duration": 14520,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 666,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_93",
+      "test_name": "Concurrent Job 93",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.897984318-07:00",
+      "end_time": "2025-08-03T17:22:28.897999219-07:00",
+      "duration": 14901,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 768,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_94",
+      "test_name": "Concurrent Job 94",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.897999629-07:00",
+      "end_time": "2025-08-03T17:22:28.898015489-07:00",
+      "duration": 15860,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 902,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "stress_concurrent_95",
+      "test_name": "Concurrent Job 95",
+      "status": "passed",
+      "start_time": "2025-08-03T17:22:28.898015909-07:00",
+      "end_time": "2025-08-03T17:22:28.89804635-07:00",
+      "duration": 30441,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 722,
         "render_time": 50000000,
         "cache_hit": false
       }
@@ -2508,9 +2508,9 @@
       "test_case_id": "stress_concurrent_96",
       "test_name": "Concurrent Job 96",
       "status": "passed",
-      "start_time": "2025-08-03T14:00:46.320791323-07:00",
-      "end_time": "2025-08-03T14:00:46.320801793-07:00",
-      "duration": 10470,
+      "start_time": "2025-08-03T17:22:28.89804678-07:00",
+      "end_time": "2025-08-03T17:22:28.898064061-07:00",
+      "duration": 17281,
       "validation_result": {
         "status": "passed",
         "score": 1,
@@ -2525,7 +2525,7 @@
       },
       "actual_output": {
         "page_count": 1,
-        "output_size": 480,
+        "output_size": 954,
         "render_time": 50000000,
         "cache_hit": false
       }
@@ -2534,9 +2534,9 @@
       "test_case_id": "stress_concurrent_97",
       "test_name": "Concurrent Job 97",
       "status": "passed",
-      "start_time": "2025-08-03T14:00:46.320802283-07:00",
-      "end_time": "2025-08-03T14:00:46.320819494-07:00",
-      "duration": 17211,
+      "start_time": "2025-08-03T17:22:28.898064401-07:00",
+      "end_time": "2025-08-03T17:22:28.898087031-07:00",
+      "duration": 22630,
       "validation_result": {
         "status": "passed",
         "score": 1,
@@ -2551,7 +2551,7 @@
       },
       "actual_output": {
         "page_count": 1,
-        "output_size": 788,
+        "output_size": 590,
         "render_time": 50000000,
         "cache_hit": false
       }
@@ -2560,9 +2560,9 @@
       "test_case_id": "stress_concurrent_98",
       "test_name": "Concurrent Job 98",
       "status": "passed",
-      "start_time": "2025-08-03T14:00:46.320819834-07:00",
-      "end_time": "2025-08-03T14:00:46.320832854-07:00",
-      "duration": 13020,
+      "start_time": "2025-08-03T17:22:28.898087581-07:00",
+      "end_time": "2025-08-03T17:22:28.898103722-07:00",
+      "duration": 16141,
       "validation_result": {
         "status": "passed",
         "score": 1,
@@ -2577,7 +2577,7 @@
       },
       "actual_output": {
         "page_count": 1,
-        "output_size": 688,
+        "output_size": 846,
         "render_time": 50000000,
         "cache_hit": false
       }
@@ -2586,9 +2586,9 @@
       "test_case_id": "stress_concurrent_99",
       "test_name": "Concurrent Job 99",
       "status": "passed",
-      "start_time": "2025-08-03T14:00:46.320833354-07:00",
-      "end_time": "2025-08-03T14:00:46.320846065-07:00",
-      "duration": 12711,
+      "start_time": "2025-08-03T17:22:28.898104472-07:00",
+      "end_time": "2025-08-03T17:22:28.898136743-07:00",
+      "duration": 32271,
       "validation_result": {
         "status": "passed",
         "score": 1,
@@ -2603,7 +2603,7 @@
       },
       "actual_output": {
         "page_count": 1,
-        "output_size": 616,
+        "output_size": 416,
         "render_time": 50000000,
         "cache_hit": false
       }
