@@ -1,0 +1,100 @@
+{
+  "suite_name": "memory_stress_extreme",
+  "start_time": "2025-08-03T22:05:22.353468243-07:00",
+  "end_time": "2025-08-03T22:05:24.978420326-07:00",
+  "duration": 2624952083,
+  "total_count": 3,
+  "passed_count": 2,
+  "failed_count": 1,
+  "skipped_count": 0,
+  "test_results": [
+    {
+      "test_case_id": "memory_massive_document",
+      "test_name": "Massive Document (50,000 paragraphs)",
+      "status": "failed",
+      "start_time": "2025-08-03T22:05:22.353470473-07:00",
+      "end_time": "2025-08-03T22:05:22.793134784-07:00",
+      "duration": 439664311,
+      "validation_result": {
+        "status": "failed",
+        "score": 0,
+        "violations": [
+          {
+            "field": "warnings",
+            "expected": [
+              "Massive document may impact performance significantly"
+            ],
+            "actual": [],
+            "severity": "minor",
+            "message": "Missing expected warnings: [Massive document may impact performance significantly]"
+          }
+        ],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 1
+        }
+      },
+      "actual_output": {
+        "page_count": 3,
+        "output_size": 7779772,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "memory_deep_nesting_extreme",
+      "test_name": "Extremely Deep Nesting (5000 levels)",
+      "status": "passed",
+      "start_time": "2025-08-03T22:05:22.793149434-07:00",
+      "end_time": "2025-08-03T22:05:24.063101504-07:00",
+      "duration": 1269952070,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 3,
+        "output_size": 110090,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "memory_complex_table_extreme",
+      "test_name": "Extreme Complex Table (10,000 rows)",
+      "status": "passed",
+      "start_time": "2025-08-03T22:05:24.063109724-07:00",
+      "end_time": "2025-08-03T22:05:24.978415276-07:00",
+      "duration": 915305552,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 3,
+        "output_size": 6756524,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    }
+  ]
+}

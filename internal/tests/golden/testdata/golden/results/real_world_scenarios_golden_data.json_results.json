@@ -1,0 +1,116 @@
+{
+  "suite_name": "real_world_scenarios",
+  "start_time": "2025-08-03T22:05:24.998603511-07:00",
+  "end_time": "2025-08-03T22:05:24.999021975-07:00",
+  "duration": 418484,
+  "total_count": 4,
+  "passed_count": 4,
+  "failed_count": 0,
+  "skipped_count": 0,
+  "test_results": [
+    {
+      "test_case_id": "real_world_0",
+      "test_name": "Invoice Document",
+      "status": "passed",
+      "start_time": "2025-08-03T22:05:24.998605151-07:00",
+      "end_time": "2025-08-03T22:05:24.998737595-07:00",
+      "duration": 132444,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 264,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "real_world_1",
+      "test_name": "Technical Report",
+      "status": "passed",
+      "start_time": "2025-08-03T22:05:24.998739725-07:00",
+      "end_time": "2025-08-03T22:05:24.998847269-07:00",
+      "duration": 107544,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 250,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "real_world_2",
+      "test_name": "Newsletter",
+      "status": "passed",
+      "start_time": "2025-08-03T22:05:24.998849519-07:00",
+      "end_time": "2025-08-03T22:05:24.998942072-07:00",
+      "duration": 92553,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 154,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "real_world_3",
+      "test_name": "Legal Document",
+      "status": "passed",
+      "start_time": "2025-08-03T22:05:24.998945032-07:00",
+      "end_time": "2025-08-03T22:05:24.999020295-07:00",
+      "duration": 75263,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 0,
+          "total_checks": 0
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 168,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,204 @@
+{
+  "suite_name": "basic",
+  "start_time": "2025-08-03T22:05:21.271015102-07:00",
+  "end_time": "2025-08-03T22:05:21.271714406-07:00",
+  "duration": 699304,
+  "total_count": 6,
+  "passed_count": 6,
+  "failed_count": 0,
+  "skipped_count": 0,
+  "test_results": [
+    {
+      "test_case_id": "html_simple",
+      "test_name": "Simple HTML Document",
+      "status": "passed",
+      "start_time": "2025-08-03T22:05:21.271016282-07:00",
+      "end_time": "2025-08-03T22:05:21.271227599-07:00",
+      "duration": 211317,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [
+          {
+            "field": "page_count",
+            "value": 1,
+            "message": "Page count matches expected value (±1 tolerance)"
+          }
+        ],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 1,
+          "total_checks": 1
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 236,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "html_with_css",
+      "test_name": "HTML Document with CSS",
+      "status": "passed",
+      "start_time": "2025-08-03T22:05:21.271235139-07:00",
+      "end_time": "2025-08-03T22:05:21.271337203-07:00",
+      "duration": 102064,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [
+          {
+            "field": "page_count",
+            "value": 1,
+            "message": "Page count matches expected value (±1 tolerance)"
+          }
+        ],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 1,
+          "total_checks": 1
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 332,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "html_table",
+      "test_name": "HTML Document with Table",
+      "status": "passed",
+      "start_time": "2025-08-03T22:05:21.271341283-07:00",
+      "end_time": "2025-08-03T22:05:21.271474608-07:00",
+      "duration": 133325,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [
+          {
+            "field": "page_count",
+            "value": 1,
+            "message": "Page count matches expected value (±1 tolerance)"
+          }
+        ],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 1,
+          "total_checks": 1
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 432,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "markdown_simple",
+      "test_name": "Simple Markdown Document",
+      "status": "passed",
+      "start_time": "2025-08-03T22:05:21.271485168-07:00",
+      "end_time": "2025-08-03T22:05:21.27155319-07:00",
+      "duration": 68022,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [
+          {
+            "field": "page_count",
+            "value": 1,
+            "message": "Page count matches expected value (±1 tolerance)"
+          }
+        ],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 1,
+          "total_checks": 1
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 206,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "markdown_code",
+      "test_name": "Markdown with Code Blocks",
+      "status": "passed",
+      "start_time": "2025-08-03T22:05:21.27155725-07:00",
+      "end_time": "2025-08-03T22:05:21.271640963-07:00",
+      "duration": 83713,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [
+          {
+            "field": "page_count",
+            "value": 1,
+            "message": "Page count matches expected value (±1 tolerance)"
+          }
+        ],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 1,
+          "total_checks": 1
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 250,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    },
+    {
+      "test_case_id": "text_simple",
+      "test_name": "Simple Text Document",
+      "status": "passed",
+      "start_time": "2025-08-03T22:05:21.271645053-07:00",
+      "end_time": "2025-08-03T22:05:21.271711366-07:00",
+      "duration": 66313,
+      "validation_result": {
+        "status": "passed",
+        "score": 1,
+        "violations": [],
+        "matches": [
+          {
+            "field": "page_count",
+            "value": 1,
+            "message": "Page count matches expected value (±1 tolerance)"
+          }
+        ],
+        "details": {
+          "critical_violations": 0,
+          "major_violations": 0,
+          "passed_checks": 1,
+          "total_checks": 1
+        }
+      },
+      "actual_output": {
+        "page_count": 1,
+        "output_size": 262,
+        "render_time": 50000000,
+        "cache_hit": false
+      }
+    }
+  ]
+}

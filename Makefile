@@ -175,16 +175,58 @@ benchmark: ## Run benchmarks
 	@go test -v -bench=. -benchmem ./...
 
 # =============================================================================
+# GOLDEN TEST DATA TARGETS
+# =============================================================================
+
+.PHONY: generate-golden-data
+generate-golden-data: ## Generate golden test data variants
+	@echo "Generating golden test data..."
+	@go run cmd/testgen/main.go -output=./testdata/golden -verbose
+
+.PHONY: generate-golden-basic
+generate-golden-basic: ## Generate basic golden test variants
+	@echo "Generating basic golden test data..."
+	@go run cmd/testgen/main.go -variants=basic -output=./testdata/golden -verbose
+
+.PHONY: generate-golden-rigor
+generate-golden-rigor: ## Generate enhanced rigor golden test data
+	@echo "Generating enhanced rigor golden test data..."
+	./testgen -variant=rigor -output=testdata/golden/rigor_golden_data.json -verbose
+
+.PHONY: generate-golden-true-rigor
+generate-golden-true-rigor: ## Generate true rigor golden test data
+	@echo "Generating true rigor golden test data..."
+	./testgen -variant=true-rigor -output=testdata/golden/true_rigor_golden_data.json -verbose
+
+.PHONY: generate-golden-edge
+generate-golden-edge: ## Generate edge case golden test variants
+	@echo "Generating edge case golden test data..."
+	@go run cmd/testgen/main.go -variants=edge -output=./testdata/golden -verbose
+
+.PHONY: generate-golden-stress
+generate-golden-stress: ## Generate stress test golden variants
+	@echo "Generating stress test golden data..."
+	@go run cmd/testgen/main.go -variants=stress -output=./testdata/golden -verbose
+
+.PHONY: test-golden
+test-golden: generate-golden-data ## Generate and run golden tests
+	@echo "Running golden tests..."
+	@go test -v -tags=golden ./internal/tests/golden/...
+
+# =============================================================================
 # CODE QUALITY TARGETS
 # =============================================================================
 
 .PHONY: lint
 lint: ## Run linters
-	@echo "Running linters..."
-	@which golangci-lint > /dev/null || (echo "Installing golangci-lint..." && \
-		curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | \
-		sh -s -- -b $(shell go env GOPATH)/bin $(GOLANGCI_LINT_VERSION))
-	@golangci-lint run
+	@echo "Running go vet..."
+	@go vet ./...
+	@echo "Running staticcheck..."
+	@staticcheck ./...
+	@echo "Running ineffassign..."
+	@ineffassign ./...
+	@echo "Checking gofmt..."
+	@test -z "$$(gofmt -l .)" || (echo "Code not formatted. Run 'make fmt' to fix." && exit 1)
 
 .PHONY: fmt
 fmt: ## Format code

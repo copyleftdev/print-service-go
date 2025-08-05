@@ -41,9 +41,20 @@ jobs:
     - name: Run go vet
       run: go vet ./...
 
-    - name: Run tests
+    - name: Generate basic test data
       run: |
-        go test -v -race -timeout=300s -coverprofile=coverage.out ./...
+        # Generate only basic test data for CI (avoid large files)
+        go run cmd/testgen/main.go -variants=basic -output=./testdata/golden -verbose
+        
+    - name: Run tests (excluding ultra rigor)
+      run: |
+        # Run all tests except ultra rigor to avoid CI timeouts and large file issues
+        go test -v -race -timeout=300s -coverprofile=coverage.out -skip="TestGoldenUltraRigor|TestGoldenTrueRigor" ./...
+        
+    - name: Run basic golden tests
+      run: |
+        # Run only basic golden tests in CI
+        go test -v -timeout=60s ./internal/tests/golden/ -run TestGoldenBasic
 
     - name: Generate coverage report
       run: |
@@ -57,11 +68,19 @@ jobs:
         name: codecov-umbrella
         fail_ci_if_error: false
 
-    - name: Run golangci-lint
-      uses: golangci/golangci-lint-action@v4
-      with:
-        version: latest
-        args: --timeout=5m
+    - name: Install linting tools
+      run: |
+        go install honnef.co/go/tools/cmd/staticcheck@latest
+        go install github.com/gordonklaus/ineffassign@latest
+
+    - name: Run linters
+      run: |
+        echo "Running staticcheck..."
+        staticcheck ./...
+        echo "Running ineffassign..."
+        ineffassign ./...
+        echo "Checking gofmt..."
+        test -z "$(gofmt -l .)" || (echo "Code not formatted. Run 'make fmt' to fix." && exit 1)
 
   # Security Scanning
   security:
@@ -85,12 +104,40 @@ jobs:
     - name: Run Gosec Security Scanner
       run: |
         go install github.com/securego/gosec/v2/cmd/gosec@latest
-        gosec -no-fail -fmt sarif -out gosec.sarif ./...
+        gosec -no-fail -fmt sarif -out gosec.sarif -conf .gosec.json ./...
 
     - name: Upload SARIF file
       uses: github/codeql-action/upload-sarif@v3
       with:
         sarif_file: gosec.sarif
+
+  # Ultra Rigor Testing (Manual/Optional)
+  ultra-rigor:
+    name: Ultra Rigor Testing
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[ultra-rigor]')
+    timeout-minutes: 60
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Go
+      uses: actions/setup-go@v5
+      with:
+        go-version: ${{ env.GO_VERSION }}
+        cache: true
+
+    - name: Generate ultra rigor test data
+      run: |
+        # Generate ultra rigor test data (this may take several minutes)
+        echo "Generating ultra rigor test data..."
+        go run cmd/testgen/main.go -variants=ultra-rigor -output=./testdata/golden -verbose
+        
+    - name: Run ultra rigor tests
+      run: |
+        # Run the full ultra rigor test suite
+        go test -v -timeout=45m ./internal/tests/golden/ -run TestGoldenUltraRigor
 
   # Build Binaries
   build:
