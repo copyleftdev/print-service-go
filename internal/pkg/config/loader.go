@@ -56,11 +56,11 @@ func getDefaultConfig() *Config {
 			RetryDelay: 10 * time.Second,
 		},
 		Print: PrintConfig{
-			MaxFileSize:     10 * 1024 * 1024, // 10MB
+			MaxFileSize:     10 * 1024 * 1024,
 			OutputDirectory: "./output",
 			TempDirectory:   "./temp",
 			Timeout:         2 * time.Minute,
-			MaxConcurrent:   2,
+			MaxConcurrent:   1000,
 		},
 		Queue: QueueConfig{
 			Type:       "memory",
