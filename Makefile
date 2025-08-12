@@ -226,3 +226,260 @@ t: test-unit ## Alias for test-unit
 
 .PHONY: c
 c: clean ## Alias for clean
+
+# =============================================================================
+# DOCKER COMPOSE COMMANDS
+# =============================================================================
+
+.PHONY: docker-up
+docker-up: ## Start all services with Docker Compose
+	@echo "🐳 Starting Docker Compose services..."
+	@docker compose up -d
+	@echo "✅ Services started! API: http://localhost:8080, Redis UI: http://localhost:8081"
+
+.PHONY: docker-down
+docker-down: ## Stop all Docker Compose services
+	@echo "🛑 Stopping Docker Compose services..."
+	@docker compose down
+	@echo "✅ Services stopped!"
+
+.PHONY: docker-logs
+docker-logs: ## View Docker Compose logs
+	@echo "📋 Viewing Docker Compose logs..."
+	@docker compose logs -f
+
+.PHONY: docker-build
+docker-build: ## Build Docker images
+	@echo "🔨 Building Docker images..."
+	@docker compose build
+	@echo "✅ Docker images built!"
+
+.PHONY: docker-rebuild
+docker-rebuild: ## Rebuild and restart services
+	@echo "🔄 Rebuilding and restarting services..."
+	@docker compose down
+	@docker compose build --no-cache
+	@docker compose up -d
+	@echo "✅ Services rebuilt and restarted!"
+
+.PHONY: docker-clean
+docker-clean: ## Clean up Docker resources
+	@echo "🧹 Cleaning up Docker resources..."
+	@docker compose down -v --remove-orphans
+	@docker system prune -f
+	@echo "✅ Docker cleanup complete!"
+
+.PHONY: docker-prod
+docker-prod: ## Deploy with production configuration
+	@echo "🚀 Deploying production configuration..."
+	@docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d
+	@echo "✅ Production deployment complete!"
+
+.PHONY: docker-prod-down
+docker-prod-down: ## Stop production deployment
+	@echo "🛑 Stopping production deployment..."
+	@docker compose -f docker-compose.yml -f docker-compose.prod.yml down
+	@echo "✅ Production deployment stopped!"
+
+.PHONY: docker-status
+docker-status: ## Show Docker Compose service status
+	@echo "📊 Docker Compose service status:"
+	@docker compose ps
+
+.PHONY: docker-shell-server
+docker-shell-server: ## Open shell in server container
+	@docker compose exec print-server sh
+
+.PHONY: docker-shell-worker
+docker-shell-worker: ## Open shell in worker container
+	@docker compose exec print-worker sh
+
+.PHONY: docker-shell-redis
+docker-shell-redis: ## Open Redis CLI
+	@docker compose exec redis redis-cli
+
+.PHONY: docker-env
+docker-env: ## Create .env file from example
+	@if [ ! -f .env ]; then \
+		echo "📝 Creating .env file from example..."; \
+		cp .env.example .env; \
+		echo "✅ .env file created! Please customize it for your environment."; \
+	else \
+		echo "⚠️  .env file already exists. Use 'make docker-env-force' to overwrite."; \
+	fi
+
+.PHONY: docker-env-force
+docker-env-force: ## Force create .env file from example (overwrites existing)
+	@echo "📝 Overwriting .env file from example..."
+	@cp .env.example .env
+	@echo "✅ .env file created! Please customize it for your environment."
+
+.PHONY: docker-test
+docker-test: ## Run tests in Docker containers
+	@echo "🧪 Running tests in Docker containers..."
+	@docker compose exec print-server go test ./...
+	@echo "✅ Tests completed!"
+
+.PHONY: docker-health
+docker-health: ## Check health of all services
+	@echo "🏥 Checking service health..."
+	@docker compose ps --format "table {{.Name}}\t{{.Status}}\t{{.Ports}}"
+	@echo ""
+	@echo "📊 Health check details:"
+	@docker compose exec print-server wget -qO- http://localhost:8080/health 2>/dev/null || echo "❌ Server health check failed"
+	@docker compose exec redis redis-cli ping 2>/dev/null || echo "❌ Redis health check failed"
+
+.PHONY: docker-monitor
+docker-monitor: ## Start monitoring services (requires monitoring profile)
+	@echo "📊 Starting monitoring services..."
+	@docker compose --profile monitoring up -d
+	@echo "✅ Monitoring started! Prometheus: http://localhost:9090"
+
+# Docker aliases for convenience
+.PHONY: dup
+dup: docker-up ## Alias for docker-up
+
+.PHONY: ddown
+ddown: docker-down ## Alias for docker-down
+
+.PHONY: dlogs
+dlogs: docker-logs ## Alias for docker-logs
+
+.PHONY: dstatus
+dstatus: docker-status ## Alias for docker-status
+
+# =============================================================================
+# DOCKER TEST COMMANDS
+# =============================================================================
+
+.PHONY: test-all
+test-all: ## Run complete test suite with Docker Compose
+	@echo "🧪 Running complete test suite..."
+	@docker compose -f docker-compose.test.yml --profile test up --build --abort-on-container-exit
+	@echo "✅ Complete test suite finished!"
+
+.PHONY: test-services-up
+test-services-up: ## Start test services (without running tests)
+	@echo "🚀 Starting test services..."
+	@docker compose -f docker-compose.test.yml up -d --build
+	@echo "✅ Test services started! Server: http://localhost:8081"
+
+.PHONY: test-services-down
+test-services-down: ## Stop test services
+	@echo "🛑 Stopping test services..."
+	@docker compose -f docker-compose.test.yml down -v --remove-orphans
+	@echo "✅ Test services stopped!"
+
+.PHONY: test-unit
+test-unit: ## Run unit tests only
+	@echo "🧪 Running unit tests..."
+	@docker compose -f docker-compose.test.yml up --build unit-tests --abort-on-container-exit
+	@echo "✅ Unit tests completed!"
+
+.PHONY: test-e2e
+test-e2e: ## Run E2E tests only
+	@echo "🚀 Running E2E tests..."
+	@docker compose -f docker-compose.test.yml up -d --build print-server-test print-worker-test
+	@sleep 15
+	@docker compose -f docker-compose.test.yml up --build e2e-tests --abort-on-container-exit
+	@docker compose -f docker-compose.test.yml down
+	@echo "✅ E2E tests completed!"
+
+.PHONY: test-golden-rigor
+test-golden-rigor: ## Run golden rigor test suite (comprehensive)
+	@echo "🏆 Running golden rigor test suite..."
+	@docker compose -f docker-compose.test.yml up -d --build print-server-test print-worker-test
+	@sleep 15
+	@docker compose -f docker-compose.test.yml up --build golden-rigor-tests --abort-on-container-exit
+	@docker compose -f docker-compose.test.yml down
+	@echo "✅ Golden rigor test suite completed!"
+
+.PHONY: test-integration
+test-integration: ## Run integration tests only
+	@echo "🔗 Running integration tests..."
+	@docker compose -f docker-compose.test.yml up --build integration-tests --abort-on-container-exit
+	@echo "✅ Integration tests completed!"
+
+.PHONY: test-fuzz
+test-fuzz: ## Run fuzz tests (gofuzz-based)
+	@echo "🔀 Running fuzz tests..."
+	@docker compose -f docker-compose.test.yml up -d --build print-server-test print-worker-test
+	@sleep 15
+	@docker compose -f docker-compose.test.yml up --build fuzz-tests --abort-on-container-exit
+	@docker compose -f docker-compose.test.yml down
+	@echo "✅ Fuzz tests completed!"
+
+.PHONY: test-native-fuzz
+test-native-fuzz: ## Run native Go fuzz tests
+	@echo "🧬 Running native Go fuzz tests..."
+	@docker compose -f docker-compose.test.yml up -d --build print-server-test print-worker-test
+	@sleep 15
+	@docker compose -f docker-compose.test.yml up --build native-fuzz-tests --abort-on-container-exit
+	@docker compose -f docker-compose.test.yml down
+	@echo "✅ Native fuzz tests completed!"
+
+.PHONY: test-fuzz-all
+test-fuzz-all: ## Run all fuzz tests (gofuzz + native)
+	@echo "🔀🧬 Running all fuzz tests..."
+	@$(MAKE) test-fuzz
+	@$(MAKE) test-native-fuzz
+	@echo "✅ All fuzz tests completed!"
+
+.PHONY: test-logs
+test-logs: ## View test service logs
+	@echo "📋 Viewing test service logs..."
+	@docker compose -f docker-compose.test.yml logs -f
+
+.PHONY: test-clean
+test-clean: ## Clean up test resources
+	@echo "🧹 Cleaning up test resources..."
+	@docker compose -f docker-compose.test.yml down -v --remove-orphans
+	@docker system prune -f
+	@echo "✅ Test cleanup complete!"
+
+.PHONY: test-status
+test-status: ## Show test service status
+	@echo "📊 Test service status:"
+	@docker compose -f docker-compose.test.yml ps
+
+# Test aliases
+.PHONY: ta
+ta: test-all ## Alias for test-all
+
+.PHONY: tu
+tu: test-unit ## Alias for test-unit
+
+.PHONY: te2e
+te2e: test-e2e ## Alias for test-e2e
+
+.PHONY: trigor
+trigor: test-golden-rigor ## Alias for test-golden-rigor
+
+.PHONY: tfuzz
+tfuzz: test-fuzz ## Alias for test-fuzz
+
+.PHONY: tnfuzz
+tnfuzz: test-native-fuzz ## Alias for test-native-fuzz
+
+.PHONY: tfuzzall
+tfuzzall: test-fuzz-all ## Alias for test-fuzz-all
+
+.PHONY: test-rigor-all
+test-rigor-all: ## Run complete rigor test suite (unit + e2e + golden rigor)
+	@echo "🚀 Running COMPLETE RIGOR TEST SUITE"
+	@echo "====================================="
+	@make test-unit
+	@make test-e2e
+	@make test-golden-rigor
+	@echo "🎉 Complete rigor test suite finished!"
+
+.PHONY: test-ultimate
+test-ultimate: ## Run ULTIMATE test suite (unit + e2e + golden rigor + fuzz)
+	@echo "🏆 Running ULTIMATE TEST SUITE"
+	@echo "==============================="
+	@echo "🧪 Unit Tests → 🚀 E2E Tests → 🎯 Golden Rigor → 🔀 Fuzz Tests"
+	@make test-unit
+	@make test-e2e
+	@make test-golden-rigor
+	@make test-fuzz-all
+	@echo "🎉 ULTIMATE test suite completed - Maximum rigor achieved!"

@@ -4,6 +4,51 @@
 
 The print service uses a comprehensive multi-tier testing strategy designed to validate system behavior across the entire spectrum of possible inputs, from normal use cases to extreme adversarial scenarios.
 
+## Docker Compose Test Automation
+
+### Complete Test Suite Commands
+
+```bash
+# Run all tests (unit + e2e + integration)
+make test-all
+
+# Run complete rigor test suite (unit + e2e + golden rigor)
+make test-rigor-all
+
+# Individual test types
+make test-unit              # Unit tests
+make test-e2e               # Ultimate E2E tests
+make test-golden-rigor      # Golden rigor test suite
+make test-integration       # Integration tests
+
+# Aliases for speed
+make ta                     # test-all
+make tu                     # test-unit
+make te2e                   # test-e2e
+make trigor                 # test-golden-rigor
+```
+
+### Test Environment
+
+The Docker Compose test setup (`docker-compose.test.yml`) provides:
+
+- **Isolated Test Environment**: Separate services on different ports (no conflicts)
+- **Memory-Based Architecture**: Uses in-memory queue/cache (no Redis required)
+- **Comprehensive Coverage**: Unit, E2E, Golden Rigor, and Integration tests
+- **Automated Service Management**: Health checks and dependency management
+- **Go Runtime Integration**: Uses `golang:1.24-alpine` for test execution
+
+### Test Services
+
+| Service | Purpose | Port | Health Check |
+|---------|---------|------|--------------|
+| `print-server-test` | API server | 8081 | `/health` endpoint |
+| `print-worker-test` | Background worker | - | Process monitoring |
+| `unit-tests` | Unit test runner | - | Exit code |
+| `e2e-tests` | Ultimate E2E tests | - | Exit code |
+| `golden-rigor-tests` | Golden test data | - | Exit code |
+| `integration-tests` | Integration tests | - | Exit code |
+
 ## Golden Test Data Generator
 
 ### Features

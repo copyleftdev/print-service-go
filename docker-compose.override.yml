@@ -1,0 +1,37 @@
+# Docker Compose Override for Development
+# This file is automatically loaded by docker-compose for local development
+
+version: '3.8'
+
+services:
+  print-server:
+    environment:
+      - CONFIG_ENV=development
+    volumes:
+      # Mount source code for development (hot reload if supported)
+      - .:/app/src:ro
+    ports:
+      - "8080:8080"
+    # Override healthcheck for faster development feedback
+    healthcheck:
+      interval: 15s
+      timeout: 5s
+      retries: 2
+      start_period: 10s
+
+  print-worker:
+    environment:
+      - CONFIG_ENV=development
+    volumes:
+      # Mount source code for development
+      - .:/app/src:ro
+    # Override healthcheck for faster development feedback
+    healthcheck:
+      interval: 15s
+      timeout: 5s
+      retries: 2
+      start_period: 10s
+
+  # Development-only services
+  redis-commander:
+    profiles: []  # Always available in development

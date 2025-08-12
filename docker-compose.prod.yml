@@ -1,0 +1,103 @@
+# Docker Compose Production Configuration
+# Use with: docker-compose -f docker-compose.yml -f docker-compose.prod.yml up
+
+version: '3.8'
+
+services:
+  redis:
+    # Production Redis with persistence and security
+    command: redis-server --appendonly yes --requirepass ${REDIS_PASSWORD:-}
+    volumes:
+      - redis_data:/data
+      - ./deployments/redis/redis.conf:/usr/local/etc/redis/redis.conf:ro
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+        reservations:
+          memory: 256M
+
+  print-server:
+    environment:
+      - CONFIG_ENV=production
+      - REDIS_URL=redis://:${REDIS_PASSWORD:-}@redis:6379
+    volumes:
+      - ./configs:/app/configs:ro
+      - print_output:/var/lib/print-service/output
+      - print_temp:/tmp/print-service
+      - print_logs:/var/log/print-service
+      # TLS certificates for production
+      - ./certs:/etc/ssl/certs:ro
+      - ./private:/etc/ssl/private:ro
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          memory: 1G
+          cpus: '1.0'
+        reservations:
+          memory: 512M
+          cpus: '0.5'
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "https://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+  print-worker:
+    environment:
+      - CONFIG_ENV=production
+      - REDIS_URL=redis://:${REDIS_PASSWORD:-}@redis:6379
+    volumes:
+      - ./configs:/app/configs:ro
+      - print_output:/var/lib/print-service/output
+      - print_temp:/tmp/print-service
+      - print_logs:/var/log/print-service
+    deploy:
+      replicas: 3
+      resources:
+        limits:
+          memory: 2G
+          cpus: '2.0'
+        reservations:
+          memory: 1G
+          cpus: '1.0'
+      restart_policy:
+        condition: on-failure
+        delay: 10s
+        max_attempts: 3
+
+  # Remove Redis Commander in production
+  redis-commander:
+    profiles:
+      - never
+
+  # Production monitoring (optional)
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: print-service-prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./deployments/monitoring/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--storage.tsdb.retention.time=200h'
+      - '--web.enable-lifecycle'
+    networks:
+      - print-service-network
+    profiles:
+      - monitoring
+
+volumes:
+  prometheus_data:
+    driver: local
