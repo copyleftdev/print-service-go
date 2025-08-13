@@ -2,6 +2,7 @@ package middleware
 
 import (
 	"net/http"
+	"os"
 	"sync"
 	"time"
 
@@ -33,6 +34,13 @@ func NewRateLimiter(limit int, window time.Duration) *RateLimiter {
 
 // RateLimit returns a middleware that implements rate limiting
 func RateLimit() gin.HandlerFunc {
+	// Check if rate limiting should be disabled for load testing
+	if os.Getenv("DISABLE_RATE_LIMITING") == "true" {
+		return gin.HandlerFunc(func(c *gin.Context) {
+			c.Next()
+		})
+	}
+
 	limiter := NewRateLimiter(10000, time.Minute) // 10,000 requests per minute for high-concurrency testing
 
 	return gin.HandlerFunc(func(c *gin.Context) {
