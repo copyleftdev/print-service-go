@@ -483,3 +483,77 @@ test-ultimate: ## Run ULTIMATE test suite (unit + e2e + golden rigor + fuzz)
 	@make test-golden-rigor
 	@make test-fuzz-all
 	@echo "🎉 ULTIMATE test suite completed - Maximum rigor achieved!"
+
+# =============================================================================
+# LOAD TESTING WITH K6
+# =============================================================================
+
+.PHONY: load-test-smoke
+load-test-smoke: ## Run k6 smoke test (quick validation)
+	@echo "💨 Running k6 smoke test..."
+	@docker compose -f docker-compose.load-test.yml run --rm k6-smoke
+
+.PHONY: load-test-basic
+load-test-basic: ## Run k6 basic load test
+	@echo "📊 Running k6 basic load test..."
+	@docker compose -f docker-compose.load-test.yml run --rm k6-load-test
+
+.PHONY: load-test-stress
+load-test-stress: ## Run k6 stress test (high load)
+	@echo "🔥 Running k6 stress test..."
+	@docker compose -f docker-compose.load-test.yml run --rm k6-stress
+
+.PHONY: load-test-spike
+load-test-spike: ## Run k6 spike test (traffic spikes)
+	@echo "⚡ Running k6 spike test..."
+	@docker compose -f docker-compose.load-test.yml run --rm k6-spike
+
+.PHONY: load-test-soak
+load-test-soak: ## Run k6 soak test (extended duration)
+	@echo "🛁 Running k6 soak test (30 minutes)..."
+	@docker compose -f docker-compose.load-test.yml run --rm k6-soak
+
+.PHONY: load-test-scenarios
+load-test-scenarios: ## Run k6 production scenarios
+	@echo "🎯 Running k6 production scenarios..."
+	@echo "Testing: web_traffic, batch_processing, enterprise_reports, api_integration, chaos_testing"
+	@K6_SCENARIO=web_traffic docker compose -f docker-compose.load-test.yml run --rm k6-scenarios
+	@K6_SCENARIO=batch_processing docker compose -f docker-compose.load-test.yml run --rm k6-scenarios
+	@K6_SCENARIO=enterprise_reports docker compose -f docker-compose.load-test.yml run --rm k6-scenarios
+
+.PHONY: load-test-all
+load-test-all: ## Run complete k6 load test suite
+	@echo "🚀 Running COMPLETE k6 load test suite..."
+	@echo "=========================================="
+	@make load-test-smoke
+	@make load-test-basic
+	@make load-test-stress
+	@make load-test-spike
+	@make load-test-scenarios
+	@echo "🎉 Complete load test suite finished!"
+
+.PHONY: load-test-production
+load-test-production: ## Run production-ready load test validation
+	@echo "🏭 Running PRODUCTION load test validation..."
+	@echo "============================================="
+	@echo "🔍 Validating production readiness with comprehensive load testing"
+	@make load-test-smoke
+	@make load-test-basic
+	@make load-test-scenarios
+	@echo "✅ Production load test validation completed!"
+
+.PHONY: load-test-results
+load-test-results: ## Show k6 load test results
+	@echo "📈 k6 Load Test Results"
+	@echo "======================="
+	@docker compose -f docker-compose.load-test.yml run --rm k6-results
+
+# Load testing aliases
+.PHONY: lsmoke lstress lspike lsoak lscenarios lall lprod
+lsmoke: load-test-smoke ## Alias for load-test-smoke
+lstress: load-test-stress ## Alias for load-test-stress
+lspike: load-test-spike ## Alias for load-test-spike
+lsoak: load-test-soak ## Alias for load-test-soak
+lscenarios: load-test-scenarios ## Alias for load-test-scenarios
+lall: load-test-all ## Alias for load-test-all
+lprod: load-test-production ## Alias for load-test-production

@@ -6,6 +6,28 @@ version: '3.8'
 
 services:
 
+  # MinIO Object Storage for testing
+  minio-test:
+    image: minio/minio:latest
+    container_name: print-service-minio-test
+    restart: unless-stopped
+    ports:
+      - "9002:9000"  # Different port to avoid conflicts
+      - "9003:9001"  # Console port
+    environment:
+      MINIO_ROOT_USER: testuser
+      MINIO_ROOT_PASSWORD: testpassword123
+    volumes:
+      - minio_test_data:/data
+    command: server /data --console-address ":9001"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+    networks:
+      - print-test-network
+
   # Print Service Server for testing
   print-server-test:
     build:
@@ -22,6 +44,11 @@ services:
     environment:
       - CONFIG_ENV=development
       - SERVER_PORT=8080
+      - MINIO_ENDPOINT=minio-test:9000
+      - MINIO_ACCESS_KEY=testuser
+      - MINIO_SECRET_KEY=testpassword123
+      - MINIO_BUCKET=print-service-pdfs-test
+      - MINIO_USE_SSL=false
     volumes:
       - ./configs:/app/configs:ro
       - print_test_output:/var/lib/print-service/output
@@ -304,6 +331,8 @@ services:
       - test
 
 volumes:
+  minio_test_data:
+    driver: local
   print_test_output:
     driver: local
   print_test_temp:

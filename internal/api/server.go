@@ -88,5 +88,12 @@ func (s *Server) setupRoutes() {
 		// Job management routes
 		v1.GET("/jobs", printHandler.ListJobs)
 		v1.GET("/jobs/:id", printHandler.GetJob)
+
+		// Storage routes (MinIO integration)
+		storageHandler := handlers.NewStorageHandler(s.logger, printHandler.GetStorage())
+		v1.GET("/storage/health", storageHandler.HealthCheck)
+		v1.GET("/storage/stats", storageHandler.GetStats)
+		v1.GET("/storage/url", storageHandler.GetPDFURL)
+		v1.GET("/storage/list", storageHandler.ListPDFs)
 	}
 }

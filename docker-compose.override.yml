@@ -7,6 +7,7 @@ services:
   print-server:
     environment:
       - CONFIG_ENV=development
+      - DISABLE_RATE_LIMITING=true
     volumes:
       # Mount source code for development (hot reload if supported)
       - .:/app/src:ro

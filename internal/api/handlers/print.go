@@ -12,6 +12,7 @@ import (
 	"print-service/internal/core/services"
 	"print-service/internal/infrastructure/logger"
 	"print-service/internal/infrastructure/queue"
+	"print-service/internal/infrastructure/storage"
 	"print-service/internal/pkg/config"
 	"print-service/internal/pkg/utils"
 
@@ -24,6 +25,7 @@ type PrintHandler struct {
 	logger       logger.Logger
 	printService *services.PrintService
 	jobStorage   *queue.MemoryJobStorage
+	storage      storage.Storage
 }
 
 // NewPrintHandler creates a new print handler
@@ -38,12 +40,29 @@ func NewPrintHandler(cfg *config.Config, logger logger.Logger) *PrintHandler {
 	// Initialize job storage
 	jobStorage := queue.NewMemoryJobStorage()
 
+	// Initialize MinIO storage
+	var storageImpl storage.Storage
+	minioStorage, err := storage.NewMinIOStorageFromEnv()
+	if err != nil {
+		logger.Warn("Failed to initialize MinIO storage, falling back to local storage", "error", err)
+		storageImpl = storage.NewLocalStorage("/tmp/print-service-pdfs")
+	} else {
+		logger.Info("MinIO storage initialized successfully")
+		storageImpl = minioStorage
+	}
+
 	return &PrintHandler{
 		config:       cfg,
 		logger:       logger.With("handler", "print"),
 		printService: printService,
 		jobStorage:   jobStorage,
+		storage:      storageImpl,
 	}
+}
+
+// GetStorage returns the storage interface for external access
+func (ph *PrintHandler) GetStorage() storage.Storage {
+	return ph.storage
 }
 
 // getJobFromStorage retrieves a job from storage by ID
@@ -153,14 +172,43 @@ func (ph *PrintHandler) Print(c *gin.Context) {
 				return
 			}
 
-			// Mark job as completed with output path
+			// Read the generated PDF file
+			pdfData, err := ph.readOutputFile(result.OutputPath)
+			if err != nil {
+				ph.logger.Error("Failed to read generated PDF", "job_id", job.ID, "output_path", result.OutputPath, "error", err)
+				job.Status = domain.JobStatusFailed
+				job.Error = "Failed to read generated PDF"
+				completedAt := time.Now()
+				job.CompletedAt = &completedAt
+				ph.jobStorage.UpdateJob(job)
+				return
+			}
+
+			// Store PDF in MinIO
+			storageKey, err := ph.storage.StorePDF(ctx, job.ID, pdfData)
+			if err != nil {
+				ph.logger.Error("Failed to store PDF in MinIO", "job_id", job.ID, "error", err)
+				job.Status = domain.JobStatusFailed
+				job.Error = "Failed to store PDF"
+				completedAt := time.Now()
+				job.CompletedAt = &completedAt
+				ph.jobStorage.UpdateJob(job)
+				return
+			}
+
+			// Clean up local file after successful MinIO upload
+			if err := os.Remove(result.OutputPath); err != nil {
+				ph.logger.Warn("Failed to clean up local PDF file", "path", result.OutputPath, "error", err)
+			}
+
+			// Mark job as completed with MinIO storage key
 			job.Status = domain.JobStatusCompleted
-			job.OutputPath = result.OutputPath
+			job.OutputPath = storageKey // Now contains MinIO storage key instead of local path
 			completedAt := time.Now()
 			job.CompletedAt = &completedAt
 			ph.jobStorage.UpdateJob(job)
 
-			ph.logger.Info("Job completed successfully", "job_id", job.ID, "output_path", result.OutputPath)
+			ph.logger.Info("Job completed successfully", "job_id", job.ID, "minio_storage_key", storageKey, "local_path_cleaned", result.OutputPath)
 		}()
 	}
 
@@ -241,11 +289,11 @@ func (ph *PrintHandler) Download(c *gin.Context) {
 		return
 	}
 
-	// Read the PDF file content
-	pdfData, err := ph.readOutputFile(job.OutputPath)
+	// Read the PDF file content from MinIO storage
+	pdfData, err := ph.storage.GetPDF(c.Request.Context(), job.OutputPath)
 	if err != nil {
-		ph.logger.Error("Failed to read output file", "output_path", job.OutputPath, "error", err)
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to read output file"})
+		ph.logger.Error("Failed to read PDF from storage", "storage_key", job.OutputPath, "error", err)
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to read PDF file"})
 		return
 	}
 
@@ -303,10 +351,12 @@ func (ph *PrintHandler) GetJob(c *gin.Context) {
 		return
 	}
 
-	// Mock job for now
-	job := &domain.PrintJob{
-		ID:     jobID,
-		Status: domain.JobStatusCompleted,
+	// Get job from storage
+	job, err := ph.getJobFromStorage(jobID)
+	if err != nil {
+		ph.logger.Error("Failed to get job", "job_id", jobID, "error", err)
+		c.JSON(http.StatusNotFound, gin.H{"error": "Job not found"})
+		return
 	}
 
 	c.JSON(http.StatusOK, job)
